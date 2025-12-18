@@ -16,7 +16,7 @@ const toggleMenu = () => {
 
 <template>
  
-  <NavBar />
+ <NavBar :toggleMenu="toggleMenu" />
 
  
    
