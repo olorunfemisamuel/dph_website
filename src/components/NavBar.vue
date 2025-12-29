@@ -42,7 +42,7 @@
 <a href="#" class="cursor-pointer">About</a>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
@@ -68,7 +68,7 @@
   <a href="#" class="cursor-pointer">Our Services</a>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
@@ -96,7 +96,7 @@
          <a href="#" class="cursor-pointer">Products</a>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
@@ -120,7 +120,7 @@
         <a href="#" class="cursor-pointer">News & Insights</a>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
@@ -146,7 +146,7 @@
           <a href="#" class="cursor-pointer">Investor Relation</a>
 
         <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
