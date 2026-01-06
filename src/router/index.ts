@@ -2,6 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import InvestNow from '@/views/InvestNow.vue'
 import HomePage from '@/views/HomePage.vue'
+import AboutUs from '@/views/AboutUs.vue'
+import LeadershipPage from '@/views/LeadershipPage.vue'
+import AssetManangementPage from '@/views/AssetManangementPage.vue'
+import InvestmentBankingPage from '@/views/InvestmentBankingPage.vue'
+import PrivateEquityPage from '@/views/PrivateEquityPage.vue'
+import SecuritiesPage from '@/views/SecuritiesPage.vue'
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -16,6 +23,41 @@ const router = createRouter({
       name: 'InvestNow',
       component: InvestNow,
     },
+
+    {
+    path: '/about',
+    name: 'AboutUs',
+    component: AboutUs,
+    },
+    {
+      path: '/Leadership',
+      name: 'LeadershipPage',
+      component : LeadershipPage,
+    },
+
+    {
+      path: '/Asset-Management',
+      name: 'AssetManagementPage',
+      component : AssetManangementPage,
+    },
+{
+      path: '/Investment-Banking',
+      name: 'InvestmentBankingPage',
+     component: InvestmentBankingPage,
+    },
+
+  {
+    path: '/Private-Equity',
+    name: 'PrivateEquityPage',
+    component: PrivateEquityPage,
+  },
+
+  {
+    path: '/Securities-Trading',
+    name: 'SecuritiesPage',
+    component: SecuritiesPage,
+  }
+
   ],
 })
 

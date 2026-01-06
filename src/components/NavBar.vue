@@ -39,7 +39,7 @@
          after:transition-all after:duration-300
          hover:after:w-full">
 
-<a href="#" class="cursor-pointer">About</a>
+  <RouterLink to="/about" class="hidden md:inline-block ml-2"> About Us
 
   <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -47,12 +47,12 @@
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Overview</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Vision & Mission</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Leadership Team profile</a>
-     <a href="#" class="block px-4 py-3 hover:bg-green-50">Policy & Compliance</a>
-     
+    <RouterLink to="/about" class="block px-4 py-3 hover:bg-green-50"> Who we are </RouterLink>
+   <a href="#" class="block px-4 py-3 hover:bg-green-50">CEO’S Message</a>
+    <RouterLink to="/Leadership" class="block px-4 py-3 hover:bg-green-50"> Leadership </RouterLink>
+      
   </div>
+  </RouterLink>
 </li>
 
 
@@ -65,7 +65,7 @@
   after:transition-all after:duration-300
   hover:after:w-full">
 
-  <a href="#" class="cursor-pointer">Our Services</a>
+  <a href="#" class="cursor-pointer">Our Businesses </a>
 
   <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -73,10 +73,10 @@
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Asset Management</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Investment Banking</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Private Equity</a>
-     <a href="#" class="block px-4 py-3 hover:bg-green-50">Securities Trading</a>
+    <RouterLink to="/Asset-Management" class="block px-4 py-3 hover:bg-green-50">Asset Management</RouterLink>
+    <RouterLink to="/Investment-Banking" class="block px-4 py-3 hover:bg-green-50">Investment Banking</RouterLink>
+    <RouterLink to="/Private-Equity" class="block px-4 py-3 hover:bg-green-50">Private Equity</RouterLink>
+     <RouterLink to = "/Securities-Trading" class="block px-4 py-3 hover:bg-green-50">Securities Trading</RouterLink>
      <a href="#" class="block px-4 py-3 hover:bg-green-50"> Trustees</a>
      
 
@@ -93,7 +93,7 @@
          hover:after:w-full font-">
         
 
-         <a href="#" class="cursor-pointer">Products</a>
+         <a href="#" class="cursor-pointer"> Insights </a>
 
   <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -117,7 +117,7 @@
          after:transition-all after:duration-300
          hover:after:w-full">
         
-        <a href="#" class="cursor-pointer">News & Insights</a>
+        <a href="#" class="cursor-pointer">Career </a>
 
   <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -143,7 +143,7 @@
          after:transition-all after:duration-300
          hover:after:w-full">
         
-          <a href="#" class="cursor-pointer">Investor Relation</a>
+          <a href="#" class="cursor-pointer"> Contact </a>
 
         <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg

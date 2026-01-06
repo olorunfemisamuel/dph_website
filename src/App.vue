@@ -8,6 +8,8 @@ import PrivacyModal from '@/components/PrivacyModal.vue'
 
 import CookiesConsent from '@/components/CookiesConsent.vue'
 
+import FooterSection from '@/components/FooterSection.vue'
+
 const menuOpen = ref(false)
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -28,6 +30,9 @@ const toggleMenu = () => {
 
   <!-- <CookiesConsent /> -->
    <CookiesConsent />
+
+   <!---Footer Section-->
+  <FooterSection />
 
 
 
