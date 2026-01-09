@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 // Logic remains empty as requested
 </script>
 

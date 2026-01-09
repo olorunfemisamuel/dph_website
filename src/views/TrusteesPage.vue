@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 // No logic required for this static layout
 </script>
 
