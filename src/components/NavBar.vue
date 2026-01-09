@@ -1,24 +1,29 @@
 <script setup lang="ts">
-  defineProps<{
-  toggleMenu: () => void
-}>()
-
-
 import { ref } from 'vue'
 
+
 const isMenuOpen = ref(false)
+
+let lastScrollY = window.scrollY
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
 
+
+
+
 </script>
 
 <template>
-  <header class="bg-white text-black shadow-md">
+  <header class="fixed top-0 left-0 w-full z-50 px-4 pt-6 bg-transparent">
    
-    <nav class="container mx-auto flex items-center justify-between py-4 px-6">
+    <nav class="max-w-7xl mx-auto bg-white
+         rounded-[28px] md:rounded-full
+         shadow-lg
+         flex items-center justify-between
+         py-4 px-6 md:px-8">
          <img src = "/dphLogo.jpg" alt="DPH Logo" class="h-10 w-auto"/>
         
           <!-- <img src="dphLogo.jpg" alt="DPH Logo" class="h-10 w-auto"/> -->
