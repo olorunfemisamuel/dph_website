@@ -3,33 +3,21 @@
 </script>
 
 <template>
-       <section class="w-full max-w-7xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-lg flex">
-    
-  <!-- Right Image Section -->
-<div class="relative w-full h-96 overflow-hidden">
 
-  <!-- Image -->
-  <img 
-    src="@/assets/PEquityimage.png" 
-    alt="About Banner" 
-    class="w-full h-full object-cover"
-  />
+    <section class="w-full max-w-7xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-lg">
+      <div class="relative w-full h-52 sm:h-64 md:h-96 overflow-hidden">
+        <img 
+          src="@/assets/Trusteesbannerimg.png" 
+          alt="About Banner" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <h3 class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 text-white font-bold text-2xl sm:text-3xl md:text-5xl z-10">
+     Private Equity
+        </h3>
+      </div>
+    </section>
 
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black/50"></div>
-
-  <!-- Text on top -->
- <h3
-  class="absolute bottom-6 left-6 md:bottom-10 md:left-10
-         text-white font-bold text-3xl md:text-5xl z-10 reveal"
->
-Private Equity
-</h3>
-
-
-</div>
-
-</section>
 
 
 <!-- Why Choose Us -->
@@ -59,20 +47,7 @@ Private Equity
       visualizing vertical components through the concept of vision quality and reconstruction, the other include data/culture services, mobile graphics recognition, eye shop instructions, pattern analysis, medical computing (MPS), botanic, audio analytics, smart radio networks, creative product generation, marketing, technology development, cloud logistics, and interactive clusters.
     </p>
   </div>
-<!-- 
-  <div class="bg-gray-100 rounded-xl p-6 shadow-md">
-  <h4 class="text-lg font-semibold text-gray-800 mb-4">
-    Our Private Equity Focus
-  </h4>
 
-  <ul class="space-y-3 right-28 text-gray-700 text-sm">
-    <li>• Long-term value creation</li>
-    <li>• Active portfolio management</li>
-    <li>• Strategic growth partnerships</li>
-    <li>• Risk-adjusted investment approach</li>
-    <li>• Experienced investment professionals</li>
-  </ul>
-</div> -->
 
 </section>
 

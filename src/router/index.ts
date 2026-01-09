@@ -8,6 +8,9 @@ import AssetManangementPage from '@/views/AssetManangementPage.vue'
 import InvestmentBankingPage from '@/views/InvestmentBankingPage.vue'
 import PrivateEquityPage from '@/views/PrivateEquityPage.vue'
 import SecuritiesPage from '@/views/SecuritiesPage.vue'
+import TrusteesPage from '@/views/TrusteesPage.vue'
+import ContactPage from '@/views/ContactPage.vue'
+import CareerPage from '@/views/CareerPage.vue'
 
 
 const router = createRouter({
@@ -56,6 +59,24 @@ const router = createRouter({
     path: '/Securities-Trading',
     name: 'SecuritiesPage',
     component: SecuritiesPage,
+  },
+
+  {
+    path: '/Trustees',
+    name: 'TrusteesPage',
+    component: TrusteesPage,
+  },
+
+  {
+    path: '/contact',
+    name: 'ContactPage',
+    component: ContactPage,
+  },
+
+  {
+    path: '/career',
+    name: 'CareerPage',
+    component: CareerPage,
   }
 
   ],

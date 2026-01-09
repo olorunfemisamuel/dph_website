@@ -1,120 +1,174 @@
 <script lang="ts">
-
+// Logic remains empty as requested
 </script>
 
 <template>
-    <section class="w-full max-w-7xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-lg flex">
-    
-  <!-- Right Image Section -->
-<div class="relative w-full h-96 overflow-hidden">
+  <!-- HERO SECTION -->
+  <!-- <section class="w-full max-w-7xl mx-auto mt-4 md:mt-6 rounded-2xl overflow-hidden shadow-lg">
+    <div class="relative w-full min-h-[220px] sm:min-h-[300px] md:min-h-[400px]">
+      <img
+        src="@/assets/assetmanagementpicture.jpg"
+        alt="About Banner"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Image -->
-  <img 
-    src="@/assets/assetmanagementpicture.jpg" 
-    alt="About Banner" 
-    class="w-full h-full object-cover"
-  />
-
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-black/50"></div>
-
-  <!-- Text on top -->
- <h3
-  class="absolute bottom-6 left-6 md:bottom-10 md:left-10
-         text-white font-bold text-3xl md:text-5xl z-10 reveal"
->
-Asset Management
-</h3>
-
-
-</div>
-
-</section>
-
-<!----Why Choose us section-->
-
-
-    <!-- Why Choose Us -->
-<section class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
-  
-  <!-- Text -->
-  <div>
-    <h4 class="text-green-700 font-semibold mb-4">WHY CHOOSE US</h4>
-    <p class="text-gray-600 leading-relaxed mb-6">
-      We provide tailored asset management solutions focused on long-term
-      growth, risk mitigation, and value creation for our clients.
-    </p>
-
-    <ul class="space-y-4 text-gray-600">
-      <li>✔ Professional portfolio management</li>
-      <li>✔ Risk-adjusted investment strategies</li>
-      <li>✔ Client-focused financial planning</li>
-    </ul>
-  </div>
-
-  <!-- Image -->
-  <img
-    src="@/assets/assetmanagementpicture.jpg"
-    class="rounded-xl shadow-md"
-  />
-</section>
-
-<!-- Content Blocks -->
-<section class="max-w-7xl mx-auto px-6 space-y-20">
-
-  <!-- Block 1 -->
-  <div class="grid md:grid-cols-2 gap-12 items-center">
-    <img
-      src="@/assets/assetmanagementpicture.jpg"
-      class="rounded-xl shadow-md"
-    />
-    <div>
-      <h4 class="font-semibold text-lg mb-3">Investment Expertise</h4>
-      <p class="text-gray-600">
-        Our team applies disciplined investment processes backed by
-        market research and analytics.
-      </p>
+      <h3
+        class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10
+               text-white font-bold text-2xl sm:text-3xl md:text-5xl z-10 reveal"
+      >
+        Asset Management
+      </h3>
     </div>
-  </div>
+  </section> -->
 
-  <!-- Block 2 -->
-  <div class="grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h4 class="font-semibold text-lg mb-3">Strategic Planning</h4>
-      <p class="text-gray-600">
-        We align investment strategies with client objectives to ensure
-        sustainable growth.
-      </p>
+    <section class="w-full max-w-7xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-lg">
+      <div class="relative w-full h-52 sm:h-64 md:h-96 overflow-hidden">
+        <img 
+          src="@/assets/investmentbanner.png" 
+          alt="About Banner" 
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+        <h3 class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 text-white font-bold text-2xl sm:text-3xl md:text-5xl z-10">
+         Assestment Management
+        </h3>
+      </div>
+    </section>
+
+
+
+
+  <!-- WHY CHOOSE US -->
+  <section class="bg-[#f4f7f9] w-full py-12 md:py-16 px-4 sm:px-6 mt-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
+      <div class="md:w-1/3">
+        <h2 class="text-2xl md:text-3xl font-bold text-[#2e8b3b]">
+          Why CHOOSE US ?
+        </h2>
+      </div>
+
+      <div class="md:w-2/3 bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-sm border">
+        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
+          We have excellent IT processes and have also leveraged technology to provide
+          instant trading capabilities to our clients...
+        </p>
+      </div>
     </div>
-    <img
-      src="@/assets/assetmanagementpicture.jpg"
-      class="rounded-xl shadow-md"
-    />
-  </div>
+  </section>
 
-</section>
+  <!-- CONTENT SECTIONS -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20 space-y-20">
 
+    <!-- SECTION 1 -->
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-8">
+        <div class="border-l-4 border-[#2e8b3b] pl-5">
+          <h4 class="font-bold text-gray-800 text-base mb-3">Mutual Funds</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We offer professionally managed mutual funds...
+          </p>
+        </div>
 
-<!-- Contact Form -->
-<section class="bg-blue-50 mt-20 py-16">
-  <div class="max-w-3xl mx-auto px-6">
-    <h4 class="text-center font-semibold mb-8">
-      Speak With an Asset Management Expert
-    </h4>
+        <div class="border-l-4 border-gray-400 pl-5">
+          <h4 class="font-bold text-gray-800 text-base mb-3">Wealth Management</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Our wealth management services provide personalized solutions...
+          </p>
+        </div>
+      </div>
 
-    <form class="space-y-4">
-      <input class="w-full p-3 rounded border" placeholder="Full Name" />
-      <input class="w-full p-3 rounded border" placeholder="Email Address" />
-      <input class="w-full p-3 rounded border" placeholder="Phone Number" />
-      <textarea class="w-full p-3 rounded border" placeholder="Message"></textarea>
+      <div class="flex justify-center">
+        <img
+          src="@/assets/assetsmangimg.png"
+          class="w-full max-w-sm sm:max-w-md rounded-3xl object-cover shadow-sm"
+        />
+      </div>
+    </div>
 
-      <button class="w-full bg-purple-600 text-white py-3 rounded hover:bg-purple-700">
-        Submit
-      </button>
-    </form>
-  </div>
-</section>
+    <!-- SECTION 2 -->
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1 flex justify-center">
+        <img
+          src="@/assets/assetsmangimg2.png"
+          class="w-full max-w-sm sm:max-w-md rounded-3xl object-cover shadow-sm"
+        />
+      </div>
 
+      <div class="order-1 md:order-2 space-y-8">
+        <div class="border-l-4 border-[#2e8b3b] pl-5">
+          <h4 class="font-bold text-[#2e8b3b] text-base mb-3">
+            Portfolio Management
+          </h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We manage investment portfolios on behalf of clients...
+          </p>
+        </div>
 
+        <div class="border-l-4 border-gray-400 pl-5">
+          <h4 class="font-bold text-gray-800 text-base mb-3">Hedge Fund</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Our hedge fund strategies focus on alternative investments...
+          </p>
+        </div>
+      </div>
+    </div>
 
+    <!-- SECTION 3 -->
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-8">
+        <div class="border-l-4 border-[#2e8b3b] pl-5">
+          <h4 class="font-bold text-gray-800 text-base mb-2">Venture Capital</h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We invest in high-growth businesses with strong fundamentals...
+          </p>
+        </div>
+
+        <div class="border-l-4 border-gray-400 pl-5">
+          <h4 class="font-bold text-gray-800 text-base mb-2">
+            Investment Advisory
+          </h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Our advisory services offer expert guidance...
+          </p>
+        </div>
+
+        <div class="border-l-4 border-gray-800 pl-5">
+          <h4 class="font-bold text-gray-800 text-base mb-2">
+            Institutional Asset Management
+          </h4>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            We design and manage tailored investment solutions for institutions...
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <img
+          src="@/assets/assetsmangimg.png"
+          class="w-full max-w-sm sm:max-w-md rounded-3xl object-cover shadow-sm"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section class="bg-blue-50 mt-20 py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h4 class="text-center font-semibold text-lg mb-8">
+        Speak With an Asset Management Expert
+      </h4>
+
+      <form class="space-y-4">
+        <input class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" placeholder="Full Name" />
+        <input class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" placeholder="Email Address" />
+        <input class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" placeholder="Phone Number" />
+        <textarea class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" rows="4" placeholder="Message"></textarea>
+
+        <button class="w-full bg-[#2e8b3b] text-white py-3 rounded-lg font-bold hover:bg-green-800 transition">
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
 </template>

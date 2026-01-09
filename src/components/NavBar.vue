@@ -3,6 +3,16 @@
   toggleMenu: () => void
 }>()
 
+
+import { ref } from 'vue'
+
+const isMenuOpen = ref(false)
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value
+}
+
+
 </script>
 
 <template>
@@ -77,7 +87,7 @@
     <RouterLink to="/Investment-Banking" class="block px-4 py-3 hover:bg-green-50">Investment Banking</RouterLink>
     <RouterLink to="/Private-Equity" class="block px-4 py-3 hover:bg-green-50">Private Equity</RouterLink>
      <RouterLink to = "/Securities-Trading" class="block px-4 py-3 hover:bg-green-50">Securities Trading</RouterLink>
-     <a href="#" class="block px-4 py-3 hover:bg-green-50"> Trustees</a>
+     <RouterLink to="/Trustees" class="block px-4 py-3 hover:bg-green-50"> Trustees</RouterLink>
      
 
   </div>
@@ -117,10 +127,10 @@
          after:transition-all after:duration-300
          hover:after:w-full">
         
-        <a href="#" class="cursor-pointer">Career </a>
+        <RouterLink to="/career" class="cursor-pointer">Career </RouterLink>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
+  <!-- <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
@@ -129,7 +139,7 @@
     <a href="#" class="block px-4 py-3 hover:bg-green-50">Case Study</a>
     <a href="#" class="block px-4 py-3 hover:bg-green-50">Financial Education Content</a>
      
-  </div>
+  </div> -->
 </li>
 
 
@@ -143,19 +153,21 @@
          after:transition-all after:duration-300
          hover:after:w-full">
         
-          <a href="#" class="cursor-pointer"> Contact </a>
+          <RouterLink to="/contact" class="cursor-pointer"> Contact </RouterLink>
 
         <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
+  <!-- <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
     <a href="#" class="block px-4 py-3 hover:bg-green-50">Annual Statement/Financial Report</a>
     <a href="#" class="block px-4 py-3 hover:bg-green-50">Investment Opportunities</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Stock Information</a>
+    <a href="#" class="block px-4 py-3 hover:bg-green-50">Stock Information</a> 
+
+    
      
-  </div>
+  </div> -->
          
         </li>
         </ul>
@@ -184,6 +196,61 @@
 
 
 </nav>
+<!-- ================= MOBILE MENU ================= -->
+<div
+  v-show="isMenuOpen"
+  class="md:hidden bg-white shadow-lg border-t px-6 py-6 space-y-6"
+>
+
+  <RouterLink to="/" @click="toggleMenu" class="block font-medium">
+    Home
+  </RouterLink>
+
+  <!-- About -->
+  <div>
+    <span class="block font-medium mb-2">About Us</span>
+    <div class="pl-4 space-y-2 text-sm">
+      <RouterLink to="/about" @click="toggleMenu" class="block">Who we are</RouterLink>
+      <a href="#" class="block">CEO’s Message</a>
+      <RouterLink to="/Leadership" @click="toggleMenu" class="block">Leadership</RouterLink>
+    </div>
+  </div>
+
+  <!-- Our Businesses -->
+  <div>
+    <span class="block font-medium mb-2">Our Businesses</span>
+    <div class="pl-4 space-y-2 text-sm">
+      <RouterLink to="/Asset-Management" @click="toggleMenu" class="block">Asset Management</RouterLink>
+      <RouterLink to="/Investment-Banking" @click="toggleMenu" class="block">Investment Banking</RouterLink>
+      <RouterLink to="/Private-Equity" @click="toggleMenu" class="block">Private Equity</RouterLink>
+      <RouterLink to="/Securities-Trading" @click="toggleMenu" class="block">Securities Trading</RouterLink>
+      <RouterLink to="/Trustees" @click="toggleMenu" class="block">Trustees</RouterLink>
+    </div>
+  </div>
+
+  <!-- Insights -->
+  <div>
+    <span class="block font-medium mb-2">Insights</span>
+   
+  </div>
+
+  <RouterLink to="/career" @click="toggleMenu" class="block font-medium">
+    Career
+  </RouterLink>
+
+  <RouterLink to="/contact" @click="toggleMenu" class="block font-medium">
+    Contact
+  </RouterLink>
+
+  <!-- CTA -->
+  <RouterLink to="/invest-now" @click="toggleMenu">
+    <button class="w-full mt-4 bg-green-700 text-white py-3 rounded-xl">
+      Invest Now
+    </button>
+  </RouterLink>
+
+</div>
+
    </header> 
 
 </template>
