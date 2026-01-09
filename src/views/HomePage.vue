@@ -1,28 +1,42 @@
 <script lang="ts" setup>
 import hompageimagedph from '@/assets/hompageimagedph.png';
 import InsightsPage from '@/components/InsightsPage.vue';
-import { onMounted } from "vue";
+import { onMounted, onBeforeUnmount, nextTick } from "vue";
 
-onMounted(() => {
+
+let observer: IntersectionObserver | null = null;
+
+onMounted(async () => {
+  await nextTick(); // ✅ wait for DOM
+
   const elements = document.querySelectorAll(".reveal");
 
-  const observer = new IntersectionObserver(
+  observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-        else {
-          entry.target.classList.remove("show");  
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer?.unobserve(entry.target); // animate once
         }
       });
     },
-    { threshold: 0.2 }
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -80px 0px",
+    }
   );
 
-   elements.forEach(el => observer.observe(el));
-   });
+  elements.forEach(el => observer?.observe(el));
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
+</script>
+
 
    
-</script>
+
 
 
 <template>
@@ -48,10 +62,14 @@ onMounted(() => {
              left-6 md:left-16
              bottom-24 md:bottom-32
              text-left
-             max-w-xl"
-    ><h2 class="capitalize font-bold text-2xl md:text-6xl text-white mb-8 leading-tight">
-        We Create Unique Solutions to Help Your Assets Grow
-      </h2>
+             max-w-none"
+    ><h2
+  class="font-semibold text-2xl md:text-6xl text-white mb-8 leading-tight"
+>
+  <span class="block">We Create Unique Solutions To Help</span>
+  <span class="block">Your Assets Grow</span>
+</h2>
+
 
       <button class="bg-green-700 hover:bg-green-800 text-white text-lg py-3 px-8 rounded transition">
         Read More
