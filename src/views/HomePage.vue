@@ -62,14 +62,15 @@ onBeforeUnmount(() => {
   <!-- Overlay -->
   <div class="absolute inset-0 bg-black/40 z-10">
     <div
-      class="reveal
-             absolute
-             left-6 md:left-16
-             bottom-24 md:bottom-32
-             text-left
-             max-w-none"
-    ><h2
-  class="font-semibold text-2xl md:text-6xl text-white mb-8 leading-tight"
+  class="reveal
+         absolute
+         left-6 md:left-16
+         top-48 md:top-50
+         text-left
+         max-w-none"
+>
+<h2
+  class="font-semibold text-3xl md:text-6xl text-white mb-8 leading-tight"
 >
   <span class="block">We Create Unique Solutions To Help</span>
   <span class="block">Your Assets Grow</span>
