@@ -12,6 +12,9 @@ import TrusteesPage from '@/views/TrusteesPage.vue'
 import ContactPage from '@/views/ContactPage.vue'
 import CareerPage from '@/views/CareerPage.vue'
 
+import Insightpage from '@/views/Insightpage.vue'
+import InsightsExtendPage from '@/views/InsightsExtendPage.vue'
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -77,9 +80,25 @@ const router = createRouter({
     path: '/career',
     name: 'CareerPage',
     component: CareerPage,
-  }
+  },
+
+   {
+    path: '/news-insights',
+    name: 'InsightseExtendPage',
+    component: InsightsExtendPage,
+  },
+
+ {
+  path: '/Insight',
+  name: 'InsightPage',
+  component: Insightpage,
+}
 
   ],
+
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router

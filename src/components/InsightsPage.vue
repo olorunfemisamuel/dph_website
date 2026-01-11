@@ -1,14 +1,16 @@
-<script>
-
+<script setup lang="ts">
+import newsletterimg1 from '@/assets/newsletterimg/newsletterimg1.png';
+import newsletterimg2 from '@/assets/newsletterimg/newsletterimg2.png';
+import newsletterimg3 from '@/assets/newsletterimg/newsletterimg3.png';
 </script>
 
 <template>
-     <div class = "reveal bg-gray-100 py-10">
-    <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">Insights</h2>
+     <div class = "bg-gray-100 py-10">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">DPH Insights</h2>
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- News Card 1 -->
       <div class="bg-white rounded-lg shadow-sm hover:shadow-black overflow-hidden transition-transform duration-300 hover:scale-110">
-        <img :src="hompageimagedph" alt="News Image" class="w-full h-48 object-cover">
+        <img :src="newsletterimg1" alt="News Image" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Market Trends 2024</h3>
           <p class="text-gray-600 mb-4">An in-depth analysis of the current market trends and what to expect in the coming year.</p>
@@ -18,7 +20,7 @@
 
       <!-- News Card 2 -->
       <div class="bg-white rounded-lg shadow-sm  hover:shadow-black overflow-hidden transition-transform duration-300 hover:scale-110">
-        <img :src="hompageimagedph" alt="News Image" class="w-full h-48 object-cover">
+        <img :src="newsletterimg2" alt="News Image" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Investment Strategies</h3>
           <p class="text-gray-600 mb-4">Explore effective investment strategies to maximize your portfolio's growth potential.</p>
@@ -30,7 +32,7 @@
 </div>
 
    <div class="bg-white rounded-lg shadow-sm hover:shadow-black overflow-hidden transition-transform duration-300 hover:scale-110">
-        <img :src="hompageimagedph" alt="News Image" class="w-full h-48 object-cover">
+        <img :src="newsletterimg3" alt="News Image" class="w-full h-48 object-cover">
         <div class="p-6">
           <h3 class="text-xl font-semibold mb-2">Investment Strategies</h3>
           <p class="text-gray-600 mb-4">Explore effective investment strategies to maximize your portfolio's growth potential.</p>

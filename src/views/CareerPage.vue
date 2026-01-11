@@ -4,7 +4,7 @@ import InsightsPage from '@/components/InsightsPage.vue';
 
 <template>
   <!-- Hero Section -->
-  <section class="relative w-full h-52 sm:h-64 md:h-65 rounded-2xl overflow-hidden">
+  <section class="relative w-full h-[35vh] sm:h-[45vh] md:h-[55vh] overflow-hidden">
     <img
       src="@/assets/CareerBannerImg.png"
       alt="Career"

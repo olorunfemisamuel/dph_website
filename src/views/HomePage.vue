@@ -1,6 +1,11 @@
 <script lang="ts" setup>
 import hompageimagedph from '@/assets/hompageimagedph.png';
 import InsightsPage from '@/components/InsightsPage.vue';
+import investHomepage from '@/assets/investHomepage.png';
+import assetmanagement from '@/assets/assetmanagement.png';
+import Privateequity from '@/assets/Privateequity.jpg';
+import securitieshomepage from '@/assets/securitieshomepage.png';
+import Trusteesimg from '@/assets/Trusteesimg.jpg';
 import { onMounted, onBeforeUnmount, nextTick } from "vue";
 
 
@@ -70,10 +75,11 @@ onBeforeUnmount(() => {
   <span class="block">Your Assets Grow</span>
 </h2>
 
-
+<RouterLink to="/about">
       <button class="bg-green-700 hover:bg-green-800 text-white text-lg py-3 px-8 rounded transition">
         Read More
       </button>
+      </RouterLink>
     </div>
   </div>
 </div>
@@ -81,55 +87,102 @@ onBeforeUnmount(() => {
 
 
 <!---What we do section-->
-<div class = "">
+<div class = "bg-[#F0F5F7] py-16">
   <h2 class="reveal text-4xl font-bold text-center text-gray-800 mt-20 mb-10">What We Do</h2>
  <p class="reveal text-center text-gray-600 mx-6 sm:mx-10 md:mx-20 mb-8 md:mb-10">
     Deutsche Partners Holding (DPH) is an independently owned financial services group with core expertise in Asset Management, Investment Banking, Private Equity, Securities, and Trusteeship. DPH is deeply committed to the success, development, and sustainable growth of its clients and their assets.
+     </p>
  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-6 md:px-10 mb-16 md:mb-20">
 
-  <div class="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-md p-3 sm:p-4">
-    <img :src="hompageimagedph"
-         class="w-16 h-14 sm:w-20 sm:h-16 md:w-24 md:h-20 object-cover rounded-xl">
-    <span class="text-sm sm:text-base text-gray-700 font-semibold hover:text-green-400">
+<RouterLink to="/Investment-Banking" class="flex items-stretch bg-white rounded-2xl shadow-md overflow-hidden">
+
+  <!-- Image container -->
+  <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
+    <img :src="investHomepage"
+         class="h-full w-full object-cover rounded-l-2xl">
+    <!-- Overlay only on image -->
+    <div class="absolute inset-0 bg-black/30 rounded-l-2xl"></div>
+  </div>
+
+  <!-- Text on top of image -->
+  <span class="relative z-10 flex items-center justify-center h-full
+           text-gray-700 text-sm sm:text-base font-semibold px-10">
+    Investment Banking
+  </span>
+
+</RouterLink>
+
+
+ <RouterLink to="/Asset-Management" class="flex items-stretch bg-white rounded-2xl shadow-md overflow-hidden">
+   <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
+    <img :src="assetmanagement"
+         class=" w-24 sm:w-28 md:w-32 h-full object-cover -mr-6 sm:-mr-8">
+         <!-- Overlay only on image -->
+    <div class="absolute inset-0 bg-black/30 rounded-l-2xl"></div>
+   </div>
+    
+    <span class="relative z-10 flex items-center justify-center h-full
+           text-gray-700 text-sm sm:text-base font-semibold px-10">
       Asset Management
     </span>
-  </div>
+  </RouterLink>
 
-  <div class="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-md p-3 sm:p-4">
-    <img :src="hompageimagedph"
-         class="w-16 h-14 sm:w-20 sm:h-16 md:w-24 md:h-20 object-cover rounded-xl">
-    <span class="text-sm sm:text-base text-gray-700 font-semibold hover:text-green-400">
-      Investment Banking
-    </span>
-  </div>
 
-  <div class="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-md p-3 sm:p-4">
-    <img :src="hompageimagedph"
-         class="w-16 h-14 sm:w-20 sm:h-16 md:w-24 md:h-20 object-cover rounded-xl">
-    <span class="text-sm sm:text-base text-gray-700 font-semibold hover:text-green-400">
+ <RouterLink to="/Private-Equity" class="flex items-stretch bg-white rounded-2xl shadow-md overflow-hidden">
+   <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
+    <img :src="Privateequity"
+         class=" w-24 sm:w-28 md:w-32 h-full object-cover -mr-6 sm:-mr-8">
+         <!-- Overlay only on image -->
+    <div class="absolute inset-0 bg-black/30 rounded-l-2xl"></div>
+   </div>
+
+    <span class="relative z-10 flex items-center justify-center h-full
+           text-gray-700 text-sm sm:text-base font-semibold px-10">
       Private Equity
     </span>
-  </div>
+  </RouterLink>
 
-  <div class="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-md p-3 sm:p-4">
-    <img :src="hompageimagedph"
-         class="w-16 h-14 sm:w-20 sm:h-16 md:w-24 md:h-20 object-cover rounded-xl">
-    <span class="text-sm sm:text-base text-gray-700 font-semibold hover:text-green-400">
+  <RouterLink to="/Securities-Trading" class="flex items-stretch bg-white rounded-2xl shadow-md overflow-hidden">
+   <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
+    <img :src="securitieshomepage"
+         class=" w-24 sm:w-28 md:w-32 h-full object-cover -mr-6 sm:-mr-8">
+         <!-- Overlay only on image -->
+    <div class="absolute inset-0 bg-black/30 rounded-l-2xl"></div>
+   </div>
+
+    <span class="relative z-10 flex items-center justify-center h-full
+           text-gray-700 text-sm sm:text-base font-semibold px-10">
       Securities Trading
     </span>
+  </RouterLink>
+
+
+
+<RouterLink
+  to="/Trustees"
+  class="flex items-stretch bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition"
+>
+  <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
+    <img
+      :src="Trusteesimg"
+      class="w-24 sm:w-28 md:w-32 h-full object-cover -mr-6 sm:-mr-8"
+    />
+    <!-- Overlay only on image -->
+    <div class="absolute inset-0 bg-black/30 rounded-l-2xl"></div>
   </div>
 
-  <div class="flex items-center gap-3 sm:gap-4 bg-white rounded-2xl shadow-md p-3 sm:p-4">
-    <img :src="hompageimagedph"
-         class="w-16 h-14 sm:w-20 sm:h-16 md:w-24 md:h-20 object-cover rounded-xl">
-    <span class="text-sm sm:text-base text-gray-700 font-semibold hover:text-green-400">
-      Trustees
-    </span>
-  </div>
+  <span
+    class="relative z-10 flex items-center justify-center h-full
+           text-gray-700 text-sm sm:text-base font-semibold px-10"
+  >
+    Trustees
+  </span>
+</RouterLink>
+
 
 </div>
 
-  </p>
+ 
 </div>
  
 
@@ -191,9 +244,18 @@ onBeforeUnmount(() => {
     <div class="max-w-3xl mx-auto px-6 text-center">
       <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
       <p class="mb-6">Stay updated with the latest news and insights from Deutsche Partners Holding.</p>
-    <form class="flex flex-col sm:flex-row items-center justify-center gap-4">
-       <input type="email" class="w-full sm:w-72 px-4 py-2 rounded text-gray-800" />
-        <button type="submit" class="bg-white text-green-700 font-semibold px-6 py-2 rounded hover:bg-green-100 transition">Subscribe</button>  
+     <form class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
+        <input 
+          type="email" 
+          placeholder="Your Email Address" 
+          class="w-full sm:flex-1 bg-white/10 border border-white/30 px-4 sm:px-6 py-3 rounded text-white placeholder:text-white/60 focus:outline-none focus:bg-white/20" 
+        />
+        <button 
+          type="submit" 
+          class="w-full sm:w-auto border-2 border-white px-8 sm:px-10 py-3 rounded font-bold hover:bg-white hover:text-[#2e8b3b] transition duration-300 uppercase text-sm sm:text-base tracking-widest"
+        >
+          Subscribe
+        </button>  
       </form>
       </div>
   </div>

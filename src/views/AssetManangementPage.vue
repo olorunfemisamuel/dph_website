@@ -1,61 +1,58 @@
 <script setup lang="ts">
-// Logic remains empty as requested
+import { ref } from 'vue'
+
+const showMutualFunds = ref(false)
+const showWealthManagement = ref(false)
+const showPortfolioManagement = ref(false)
+const showHedgeFund = ref(false)
+const showVentureCapital = ref(false)
+const showInvestmentAdvisory= ref(false)
+const showInstitutionalAssetManagement= ref(false)
 </script>
+
 
 <template>
   <!-- HERO SECTION -->
-  <!-- <section class="w-full max-w-7xl mx-auto mt-4 md:mt-6 rounded-2xl overflow-hidden shadow-lg">
-    <div class="relative w-full min-h-[220px] sm:min-h-[300px] md:min-h-[400px]">
-      <img
-        src="@/assets/assetmanagementpicture.jpg"
-        alt="About Banner"
+  <section class="w-full overflow-hidden shadow-lg">
+    <div class="relative w-full h-100 sm:h-64 md:h-96 overflow-hidden">
+      <img 
+        src="@/assets/assetmangbanner.jpg" 
+        alt="About Banner" 
         class="w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-black/50"></div>
-
-      <h3
-        class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10
-               text-white font-bold text-2xl sm:text-3xl md:text-5xl z-10 reveal"
-      >
-        Asset Management
+      <h3 class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 text-white font-bold text-2xl sm:text-3xl md:text-5xl z-10">
+       Asset Management
       </h3>
     </div>
-  </section> -->
+  </section>
 
-    <section class="w-full max-w-7xl mx-auto mt-6 rounded-2xl overflow-hidden shadow-lg">
-      <div class="relative w-full h-52 sm:h-64 md:h-96 overflow-hidden">
-        <img 
-          src="@/assets/investmentbanner.png" 
-          alt="About Banner" 
+  <!-- IMAGE + TEXT SECTION (New from design) -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+    <div class="grid md:grid-cols-2 gap-0  rounded-2xl overflow-hidden ">
+      <!-- Image Side -->
+      <div class="relative h-50 md:h-auto">
+        <img
+          src="@/assets/assetmanagement1.png"
+          alt="Team collaboration"
           class="w-full h-full object-cover"
         />
-        <div class="absolute inset-0 bg-black/50"></div>
-        <h3 class="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 md:bottom-10 md:left-10 text-white font-bold text-2xl sm:text-3xl md:text-5xl z-10">
-         Assestment Management
-        </h3>
-      </div>
-    </section>
-
-
-
-
-  <!-- WHY CHOOSE US -->
-  <section class="bg-[#f4f7f9] w-full py-12 md:py-16 px-4 sm:px-6 mt-10">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
-      <div class="md:w-1/3">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#2e8b3b]">
-          Why CHOOSE US ?
-        </h2>
       </div>
 
-      <div class="md:w-2/3 bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-sm border">
-        <p class="text-gray-700 leading-relaxed text-sm sm:text-base">
-          We have excellent IT processes and have also leveraged technology to provide
-          instant trading capabilities to our clients...
+      <!-- Text Side -->
+      <div class="bg-gradient-to-br from-green-900 to-green-800 p-6 md:p-8 lg:p-10 flex flex-col justify-center text-white">
+        <p class="text-xs md:text-sm leading-relaxed mb-4">
+          We invest in practice such as Equity, Fixed Income, Real Estate, Commodities, Alternative Investments and Mutual funds. Accounts held by financial institutions often include checking, savings, certificates of deposit, and. MMFs which includes the automated sweep of cash balances into a sweep account that earns interest.
+        </p>
+
+        <p class="text-sm md:text-sm leading-relaxed">
+          We deliver top of the line Investment Management services to our clients and engage funds by Institutions and Corporate Entities.
         </p>
       </div>
     </div>
   </section>
+
+  <!-- WHY CHOOSE US -->
 
   <!-- CONTENT SECTIONS -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20 space-y-20">
@@ -63,15 +60,19 @@
     <!-- SECTION 1 -->
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <div class="space-y-8">
-        <div class="border-l-4 border-[#2e8b3b] pl-5">
-          <h4 class="font-bold text-gray-800 text-base mb-3">Mutual Funds</h4>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            We offer professionally managed mutual funds...
-          </p>
-        </div>
+       <div
+  class="border-l-4 border-[#2e8b3b] pl-5 cursor-pointer"
+  @click="showMutualFunds = true"
+>
+  <h4 class="font-bold text-gray-800 text-base mb-3 transition-colors duration-300 hover:text-[#2e8b3b]">Mutual Funds</h4>
+  <p class="text-gray-600 text-sm leading-relaxed">
+    We offer professionally managed mutual funds...
+  </p>
+</div>
 
-        <div class="border-l-4 border-gray-400 pl-5">
-          <h4 class="font-bold text-gray-800 text-base mb-3">Wealth Management</h4>
+
+        <div class="border-l-4 border-gray-400 pl-5 cursor-pointer" @click="showWealthManagement = true">
+          <h4 class="font-bold text-gray-800 text-base mb-3 transition-colors duration-300 hover:text-[#2e8b3b]">Wealth Management</h4>
           <p class="text-gray-600 text-sm leading-relaxed">
             Our wealth management services provide personalized solutions...
           </p>
@@ -80,7 +81,7 @@
 
       <div class="flex justify-center">
         <img
-          src="@/assets/assetsmangimg.png"
+          src="@/assets/assetmanagementPRODUCT.png"
           class="w-full max-w-sm sm:max-w-md rounded-3xl object-cover shadow-sm"
         />
       </div>
@@ -90,14 +91,14 @@
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="order-2 md:order-1 flex justify-center">
         <img
-          src="@/assets/assetsmangimg2.png"
+          src="@/assets/assetimgProd.png"
           class="w-full max-w-sm sm:max-w-md rounded-3xl object-cover shadow-sm"
         />
       </div>
 
       <div class="order-1 md:order-2 space-y-8">
-        <div class="border-l-4 border-[#2e8b3b] pl-5">
-          <h4 class="font-bold text-[#2e8b3b] text-base mb-3">
+        <div class="border-l-4 border-[#2e8b3b] pl-5 cursor-pointer"  @click="showPortfolioManagement = true">
+          <h4 class="font-bold text-[#2e8b3b] text-base mb-3 transition-colors duration-300 hover:text-[#06410e]">
             Portfolio Management
           </h4>
           <p class="text-gray-600 text-sm leading-relaxed">
@@ -105,8 +106,8 @@
           </p>
         </div>
 
-        <div class="border-l-4 border-gray-400 pl-5">
-          <h4 class="font-bold text-gray-800 text-base mb-3">Hedge Fund</h4>
+        <div class="border-l-4 border-gray-400 pl-5 cursor-pointer" @click="showHedgeFund = true">
+          <h4 class="font-bold text-gray-800 text-base mb-3 transition-colors duration-300 hover:text-[#2e8b3b]">Hedge Fund</h4>
           <p class="text-gray-600 text-sm leading-relaxed">
             Our hedge fund strategies focus on alternative investments...
           </p>
@@ -117,15 +118,15 @@
     <!-- SECTION 3 -->
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <div class="space-y-8">
-        <div class="border-l-4 border-[#2e8b3b] pl-5">
-          <h4 class="font-bold text-gray-800 text-base mb-2">Venture Capital</h4>
+        <div class="border-l-4 border-[#2e8b3b] pl-5 cursor-pointer" @click = "showVentureCapital = true">
+          <h4 class="font-bold text-gray-800 text-base mb-2 transition-colors duration-300 hover:text-[#2e8b3b]">Venture Capital</h4>
           <p class="text-gray-600 text-sm leading-relaxed">
             We invest in high-growth businesses with strong fundamentals...
           </p>
         </div>
 
-        <div class="border-l-4 border-gray-400 pl-5">
-          <h4 class="font-bold text-gray-800 text-base mb-2">
+        <div class="border-l-4 border-gray-400 pl-5 cursor-pointer" @click="showInvestmentAdvisory= true">
+          <h4 class="font-bold text-gray-800 text-base mb-2 transition-colors duration-300 hover:text-[#2e8b3b]">
             Investment Advisory
           </h4>
           <p class="text-gray-600 text-sm leading-relaxed">
@@ -133,10 +134,12 @@
           </p>
         </div>
 
-        <div class="border-l-4 border-gray-800 pl-5">
-          <h4 class="font-bold text-gray-800 text-base mb-2">
-            Institutional Asset Management
-          </h4>
+        <div class="border-l-4 border-gray-800 pl-5 cursor-pointer" @click="showInstitutionalAssetManagement= true">
+         <h4
+  class="font-bold text-gray-800 text-base mb-2 transition-colors duration-300 hover:text-[#2e8b3b]"
+>
+  Institutional Asset Management
+</h4>
           <p class="text-gray-600 text-sm leading-relaxed">
             We design and manage tailored investment solutions for institutions...
           </p>
@@ -145,7 +148,7 @@
 
       <div class="flex justify-center">
         <img
-          src="@/assets/assetsmangimg.png"
+          src="@/assets/assetimgProd1.png"
           class="w-full max-w-sm sm:max-w-md rounded-3xl object-cover shadow-sm"
         />
       </div>
@@ -153,22 +156,355 @@
   </section>
 
   <!-- CONTACT FORM -->
-  <section class="bg-blue-50 mt-20 py-12 md:py-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h4 class="text-center font-semibold text-lg mb-8">
-        Speak With an Asset Management Expert
+ <section class="bg-gray-100 mt-20 py-12 md:py-16">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6">
+    <!-- Form Container with border -->
+    <div class="bg-transparent rounded-lg p-8 md:p-10">
+      <h4 class="text-center font-normal text-blue-600 text-sm md:text-base mb-8 uppercase tracking-wide">
+        Consultation with an Asset Management Advisor
       </h4>
 
-      <form class="space-y-4">
-        <input class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" placeholder="Full Name" />
-        <input class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" placeholder="Email Address" />
-        <input class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" placeholder="Phone Number" />
-        <textarea class="w-full p-3 rounded border focus:ring-2 focus:ring-green-600 outline-none" rows="4" placeholder="Message"></textarea>
+      <form class="space-y-5">
+        <!-- First Name -->
+        <div>
+          <input 
+            type="text"
+            class="w-full px-0 py-2 border-0 border-b border-gray-300 focus:border-blue-600 focus:ring-0 outline-none text-sm placeholder-gray-500" 
+            placeholder="First Name" 
+          />
+        </div>
 
-        <button class="w-full bg-[#2e8b3b] text-white py-3 rounded-lg font-bold hover:bg-green-800 transition">
-          Submit
-        </button>
+        <!-- Last Name -->
+        <div>
+          <input 
+            type="text"
+            class="w-full px-0 py-2 border-0 border-b border-gray-300 focus:border-blue-600 focus:ring-0 outline-none text-sm placeholder-gray-500" 
+            placeholder="Last Name" 
+          />
+        </div>
+
+        <!-- Email Address -->
+        <div>
+          <input 
+            type="email"
+            class="w-full px-0 py-2 border-0 border-b border-gray-300 focus:border-blue-600 focus:ring-0 outline-none text-sm placeholder-gray-500" 
+            placeholder="Email Address" 
+          />
+        </div>
+
+        <!-- Phone Number -->
+        <div>
+          <input 
+            type="tel"
+            class="w-full px-0 py-2 border-0 border-b border-gray-300 focus:border-blue-600 focus:ring-0 outline-none text-sm placeholder-gray-500" 
+            placeholder="Phone Number" 
+          />
+        </div>
+
+        <!-- Message -->
+        <div>
+          <textarea 
+            class="w-full px-0 py-2 border-0 border-b border-gray-300 focus:border-blue-600 focus:ring-0 outline-none text-sm placeholder-gray-500 resize-none" 
+            rows="1" 
+            placeholder="Leave a Message"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-4">
+          <button 
+            type="submit"
+            class="bg-blue-600 text-white px-8 py-2.5 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- MUTUAL FUNDS MODAL -->
+<div
+  v-if="showMutualFunds"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showMutualFunds = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+      Mutual Funds
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Content (from your second image) -->
+    <p class="text-gray-700 text-sm leading-relaxed">
+      We present a unique and highly rewarding investment opportunity to
+      investors to set their money working efficiently and effectively
+      independent of them, with the ultimate goal of achieving long-term
+      returns that are uncorrelated with the Nigerian equities market by
+      investing in a portfolio of Federal Government Bonds, Money Market
+      Securities and Cash that have been approved by the Securities and
+      Exchange Commission of Nigeria for our investors.
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showMutualFunds = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- WEALTH MANAGEMENT MODAL -->
+<div
+  v-if="showWealthManagement"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showWealthManagement = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+    Wealth Management
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Text Content-->
+    <p class="text-gray-700 text-sm leading-relaxed">
+      We build and preserve wealth across diverse asset classes, including equities, real estate, digital markets, commodities, energy, agriculture, and currency investments. Our client-focused structure minimises costs, allowing investors to retain more of their returns and grow their wealth over time.
+We also offer a comprehensive lending portfolio spanning office buildings, warehouses, mixed-use, multi-family, and retail properties, with competitive terms and long-term funding strategies designed to deliver attractive returns throughout the real estate cycl 
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showWealthManagement = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!----Portfolio Management Modal-->
+<div
+  v-if="showPortfolioManagement"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showPortfolioManagement = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+    Portfolio Management
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Text Content-->
+    <p class="text-gray-700 text-sm leading-relaxed">
+    We manage client wealth with a strategic focus on achieving superior market performance, tailored to individual investment objectives. Our Discretionary Portfolio Management Services (DPMS) serve high-net-worth and institutional clients, delivering bespoke portfolio solutions through a combination of extensive investment resources, rigorous research, local market insights, and advanced risk management.
+DPMS empowers clients to directly own a diversified portfolio of individual securities, providing greater control and transparency than traditional mutual funds. We work closely with clients to define investment policies, select optimal strategies, and construct portfolios aligned with their goals.
+Our team leverages deep local market knowledge to identify high-potential investment opportunities while providing disciplined execution and attentive service. Portfolios are strategically diversified across sectors, markets, and asset classes, with a clear focus on generating superior risk-adjusted returns through careful investment selection and proactive management.
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showPortfolioManagement = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!----Hedge Fund Modal-->
+<div
+  v-if="showHedgeFund"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showHedgeFund = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+   Hedge Fund
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Text Content-->
+    <p class="text-gray-700 text-sm leading-relaxed">
+    We manage client wealth with a strategic focus on achieving superior market performance, tailored to individual investment objectives. Our Discretionary Portfolio Management Services (DPMS) serve high-net-worth and institutional clients, delivering bespoke portfolio solutions through a combination of extensive investment resources, rigorous research, local market insights, and advanced risk management.
+DPMS empowers clients to directly own a diversified portfolio of individual securities, providing greater control and transparency than traditional mutual funds. We work closely with clients to define investment policies, select optimal strategies, and construct portfolios aligned with their goals.
+Our team leverages deep local market knowledge to identify high-potential investment opportunities while providing disciplined execution and attentive service. Portfolios are strategically diversified across sectors, markets, and asset classes, with a clear focus on generating superior risk-adjusted returns through careful investment selection and proactive management.
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showHedgeFund = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!----Venture Capital Modal-->
+<div
+  v-if="showVentureCapital"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showVentureCapital = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+   Venture Capital
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Text Content-->
+    <p class="text-gray-700 text-sm leading-relaxed">
+   We provide tailored venture capital services through a client-focused model supported by advanced technology and multi-jurisdictional capabilities. Our services include fund administration, SPV administration, depositary services, regulatory reporting, and corporate support.
+Clients benefit from detailed investment analytics, performance tracking, and exposure reporting, enabling easy monitoring of investments. Leveraging global expertise and innovative solutions, we help venture capital investors navigate complex fund structures while meeting both internal and investor requirements efficiently.
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showVentureCapital = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!----Investment Advisory Modal-->
+<div
+  v-if="showInvestmentAdvisory"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showInvestmentAdvisory = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+Investment Advisory
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Text Content-->
+    <p class="text-gray-700 text-sm leading-relaxed">
+ Our professional advisors help clients maximise the potential of their assets through tailored investment strategies aligned with individual objectives and risk preferences. We keep clients informed of market developments, regularly review portfolios, and adjust strategies to meet changing conditions.
+Our structured approach includes defining investor profiles, designing optimal account structures, setting investment guidelines, implementing portfolios, and monitoring performance quarterly. This ensures disciplined, transparent, and results-driven asset management for superior long-term outcomes.
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showInvestmentAdvisory = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
+<!---Institutional Assest Management Modal-->
+<div
+  v-if="showInstitutionalAssetManagement"
+  class="fixed inset-0 z-50 flex items-center justify-center"
+>
+  <!-- Dark overlay -->
+  <div
+    class="absolute inset-0 bg-black/60"
+    @click="showInstitutionalAssetManagement = false"
+  ></div>
+
+  <!-- Modal content -->
+  <div class="relative bg-white max-w-3xl w-full mx-4 rounded-xl shadow-2xl p-8">
+    
+    <!-- Title -->
+    <h3 class="text-center text-[#2e8b3b] font-semibold text-sm mb-4">
+Institutional Asset Management
+    </h3>
+
+    <hr class="mb-6" />
+
+    <!-- Text Content-->
+    <p class="text-gray-700 text-sm leading-relaxed">
+ We provide independent investment advice and management for institutional clients, including family offices, foundations, endowments, and pension plans. Each investment plan is tailored to meet the unique objectives and liabilities of the organization.
+Our approach combines technology, structured advice, and personalized planning to deliver portfolios that are transparent, cost-efficient, liquid, and aligned with long-term goals. Services include establishing investment policies, selecting funds, monitoring performance, controlling expenses, and diversifying assets according to specific risk and return objectives.
+Whether short, medium, or long term, we design strategies that help institutions achieve their goals while managing risk effectively.
+    </p>
+
+    <!-- Close button -->
+    <div class="mt-8 text-center">
+      <button
+        class="text-sm text-gray-500 hover:text-gray-800"
+        @click="showInstitutionalAssetManagement = false"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
 </template>

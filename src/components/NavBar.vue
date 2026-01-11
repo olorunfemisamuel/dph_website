@@ -108,7 +108,7 @@ const toggleMenu = () => {
          hover:after:w-full font-">
         
 
-         <a href="#" class="cursor-pointer"> Insights </a>
+         <RouterLink to="/Insight" class="cursor-pointer"> Insights </RouterLink>
 
   <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -116,9 +116,9 @@ const toggleMenu = () => {
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 1</a>
+    <!-- <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 1</a>
     <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 2</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 3</a>
+    <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 3</a> -->
   </div>
          
         </li>
@@ -236,7 +236,6 @@ const toggleMenu = () => {
   <!-- Insights -->
   <div>
     <span class="block font-medium mb-2">Insights</span>
-   
   </div>
 
   <RouterLink to="/career" @click="toggleMenu" class="block font-medium">
