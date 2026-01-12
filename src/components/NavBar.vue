@@ -10,7 +10,9 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
+const aboutOpen = ref(false)
 
+const businessOpen = ref(false)
 
 
 
@@ -54,7 +56,7 @@ const toggleMenu = () => {
          after:transition-all after:duration-300
          hover:after:w-full">
 
-  <RouterLink to="/about" class="hidden md:inline-block ml-2"> About Us
+  <RouterLink to="/about" class="hidden md:inline-block ml-2"> About Us   </RouterLink>
 
   <!-- Dropdown -->
   <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -63,11 +65,11 @@ const toggleMenu = () => {
               transition-all duration-300 z-50">
 
     <RouterLink to="/about" class="block px-4 py-3 hover:bg-green-50"> Who we are </RouterLink>
-   <a href="#" class="block px-4 py-3 hover:bg-green-50">CEO’S Message</a>
+   <RouterLink to="/MDmessage" class="block px-4 py-3 hover:bg-green-50">MD’s Message</RouterLink>
     <RouterLink to="/Leadership" class="block px-4 py-3 hover:bg-green-50"> Leadership </RouterLink>
       
   </div>
-  </RouterLink>
+
 </li>
 
 
@@ -212,30 +214,76 @@ const toggleMenu = () => {
   </RouterLink>
 
   <!-- About -->
-  <div>
-    <span class="block font-medium mb-2">About Us</span>
-    <div class="pl-4 space-y-2 text-sm">
-      <RouterLink to="/about" @click="toggleMenu" class="block">Who we are</RouterLink>
-      <a href="#" class="block">CEO’s Message</a>
-      <RouterLink to="/Leadership" @click="toggleMenu" class="block">Leadership</RouterLink>
+   <div>
+    <button
+      @click="aboutOpen = !aboutOpen"
+      class="w-full flex items-center justify-between font-medium"
+    >
+      About Us
+      <span
+        class="transition-transform"
+        :class="aboutOpen ? 'rotate-180' : ''"
+      >
+        ▼
+      </span>
+    </button>
+
+    <div
+      v-show="aboutOpen"
+      class="pl-4 mt-3 space-y-2 text-sm"
+    >
+      <RouterLink to="/about" @click="toggleMenu" class="block">
+        Who we are
+      </RouterLink>
+      <RouterLink to="/MDmessage" @click="toggleMenu" class="block">
+        MD’s Message
+      </RouterLink>
+      <RouterLink to="/Leadership" @click="toggleMenu" class="block">
+        Leadership
+      </RouterLink>
     </div>
   </div>
 
   <!-- Our Businesses -->
-  <div>
-    <span class="block font-medium mb-2">Our Businesses</span>
-    <div class="pl-4 space-y-2 text-sm">
-      <RouterLink to="/Asset-Management" @click="toggleMenu" class="block">Asset Management</RouterLink>
-      <RouterLink to="/Investment-Banking" @click="toggleMenu" class="block">Investment Banking</RouterLink>
-      <RouterLink to="/Private-Equity" @click="toggleMenu" class="block">Private Equity</RouterLink>
-      <RouterLink to="/Securities-Trading" @click="toggleMenu" class="block">Securities Trading</RouterLink>
-      <RouterLink to="/Trustees" @click="toggleMenu" class="block">Trustees</RouterLink>
+   <div>
+    <button
+      @click="businessOpen = !businessOpen"
+      class="w-full flex items-center justify-between font-medium"
+    >
+      Our Businesses
+      <span
+        class="transition-transform"
+        :class="businessOpen ? 'rotate-180' : ''"
+      >
+        ▼
+      </span>
+    </button>
+
+    <div
+      v-show="businessOpen"
+      class="pl-4 mt-3 space-y-2 text-sm"
+    >
+      <RouterLink to="/Asset-Management" @click="toggleMenu" class="block">
+        Asset Management
+      </RouterLink>
+      <RouterLink to="/Investment-Banking" @click="toggleMenu" class="block">
+        Investment Banking
+      </RouterLink>
+      <RouterLink to="/Private-Equity" @click="toggleMenu" class="block">
+        Private Equity
+      </RouterLink>
+      <RouterLink to="/Securities-Trading" @click="toggleMenu" class="block">
+        Securities Trading
+      </RouterLink>
+      <RouterLink to="/Trustees" @click="toggleMenu" class="block">
+        Trustees
+      </RouterLink>
     </div>
   </div>
 
   <!-- Insights -->
   <div>
-    <span class="block font-medium mb-2">Insights</span>
+    <RouterLink to="/Insight" @click="toggleMenu" class="block font-medium mb-2">Insights</RouterLink>
   </div>
 
   <RouterLink to="/career" @click="toggleMenu" class="block font-medium">

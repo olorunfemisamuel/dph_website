@@ -28,7 +28,7 @@
   <div class="flex flex-col md:flex-row items-stretch gap-6">
 
     <!-- LEFT IMAGE -->
-    <div class="md:w-1/3 w-full">
+    <div class="relative md:w-1/3 w-full right-[-50px]">
       <img
         src="@/assets/TrusteesBoximg.png"
         alt="Client Meeting"
@@ -37,7 +37,7 @@
     </div>
 
     <!-- RIGHT GREEN BOX -->
-    <div class="md:w-2/3 w-full bg-[#0B4D2E] rounded-xl p-6 sm:p-8 flex items-center">
+    <div class="md:w-2/3 w-full bg-[#0B4D2E] rounded-xl p-6 sm:p-8 flex items-center h-[368px] mt-12 ">
       <p class="text-white text-sm sm:text-[13px] leading-relaxed">
         Our clients rely on us to deliver first-class trust services tailored
         to both local and international standards. Drawing on deep professional

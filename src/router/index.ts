@@ -14,6 +14,7 @@ import CareerPage from '@/views/CareerPage.vue'
 
 import Insightpage from '@/views/Insightpage.vue'
 import InsightsExtendPage from '@/views/InsightsExtendPage.vue'
+import MDMessagePage from '@/views/MDMessagePage.vue'
 
 
 const router = createRouter({
@@ -92,6 +93,12 @@ const router = createRouter({
   path: '/Insight',
   name: 'InsightPage',
   component: Insightpage,
+},
+
+{
+  path: '/MDmessage',
+  name: 'MDmessage',
+  component: MDMessagePage
 }
 
   ],

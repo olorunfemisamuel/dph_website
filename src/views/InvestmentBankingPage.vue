@@ -27,7 +27,7 @@
         <img
           src="@/assets/InvestFirstImg.jpg"
           alt="Professional"
-          class="w-full h-auto rounded-lg shadow-sm"
+          class=" w-full h-auto rounded-lg shadow-sm"
         />
       </div>
 
@@ -65,7 +65,7 @@
           The Mergers and Acquisitions (M&A) Group at Deutsche partners holding is one of the leading M&A advisors in Africa. Providing the full spectrum of strategic Financial Advisory Services. Our Team delivers expert guidance and execution for mergers, acquisitions, divestitures, and cross border transactions, offering innovative, fully integrated solutions to help clients navigate complex deals and achieve strategic goals.
         </p>
       </div>
-      <div class="w-full md:w-1/3">
+      <div class="w-full md:w-1/3 h-full">
         <img src="@/assets/InvestmentBankingimg2.png" class="w-2.5/5 h-full object-cover ml-40" />
       </div>
     </div>

@@ -105,7 +105,7 @@ onMounted(() => {
 
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0 mb-12 md:mb-16 lg:mb-20">
     <!-- Accountability -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
           <i class="far fa-list-alt text-green-600 text-2xl"></i>
@@ -118,7 +118,7 @@ onMounted(() => {
     </div>
 
     <!-- Excellence -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-blue-600">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
           <i class="far fa-star text-blue-600 text-2xl"></i>
@@ -131,7 +131,7 @@ onMounted(() => {
     </div>
 
     <!-- Customer Focus -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-black">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
           <i class="fas fa-crosshairs text-gray-700 text-2xl"></i>
@@ -144,7 +144,7 @@ onMounted(() => {
     </div>
 
     <!-- Integrity -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
           <i class="far fa-check-circle text-green-600 text-2xl"></i>
@@ -157,7 +157,7 @@ onMounted(() => {
     </div>
 
     <!-- Social Responsibility -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-blue-600">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
           <i class="fas fa-users text-blue-600 text-2xl"></i>
@@ -170,7 +170,7 @@ onMounted(() => {
     </div>
 
     <!-- Transparency -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-black">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
           <i class="far fa-eye text-gray-700 text-2xl"></i>

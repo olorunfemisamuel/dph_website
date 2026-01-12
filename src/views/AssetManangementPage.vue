@@ -27,8 +27,8 @@ const showInstitutionalAssetManagement= ref(false)
     </div>
   </section>
 
-  <!-- IMAGE + TEXT SECTION (New from design) -->
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-16">
+  <!-- IMAGE + TEXT SECTION (New from design)  -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
     <div class="grid md:grid-cols-2 gap-0  rounded-2xl overflow-hidden ">
       <!-- Image Side -->
       <div class="relative h-50 md:h-auto">
@@ -40,7 +40,7 @@ const showInstitutionalAssetManagement= ref(false)
       </div>
 
       <!-- Text Side -->
-      <div class="bg-gradient-to-br from-green-900 to-green-800 p-6 md:p-8 lg:p-10 flex flex-col justify-center text-white">
+      <div class="bg-gradient-to-br from-green-900 to-green-800 p-2 md:p-8  flex flex-col justify-center text-white">
         <p class="text-xs md:text-sm leading-relaxed mb-4">
           We invest in practice such as Equity, Fixed Income, Real Estate, Commodities, Alternative Investments and Mutual funds. Accounts held by financial institutions often include checking, savings, certificates of deposit, and. MMFs which includes the automated sweep of cash balances into a sweep account that earns interest.
         </p>

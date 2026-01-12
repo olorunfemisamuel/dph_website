@@ -43,8 +43,8 @@ const cardClass =
 
 <template>
   <main class="overflow-x-hidden">
-    <div class="relative w-full sm:h-screen h-[75%]  overflow-hidden">
-      <div class="relative w-full h-screen overflow-hidden">
+   <div class="relative w-full sm:h-screen h-[75%] overflow-hidden">
+  <div class="relative w-full h-screen overflow-hidden">
         <!-- Background Video -->
         <video
           autoplay
@@ -77,9 +77,9 @@ const cardClass =
     </div>
 
     <!---What we do section-->
-    <div class="bg-[#F0F5F7] py-16">
-      <h2 class="reveal text-4xl font-bold text-center text-gray-800 mt-20 mb-10">What We Do</h2>
-      <p class="reveal text-center text-gray-600 mx-6 sm:mx-10 md:mx-20 mb-8 md:mb-10">
+    <div class="bg-[#F0F5F7] py-1">
+      <h2 class="reveal text-4xl font-bold  text-gray-500 mt-20 mb-10 ml-18">What We Do</h2>
+      <p class="reveal  text-gray-600 mx-6 sm:mx-10 md:mx-20 mb-8 md:mb-10  text-justify">
         Deutsche Partners Holding (DPH) is an independently owned financial services group with core
         expertise in Asset Management, Investment Banking, Private Equity, Securities, and
         Trusteeship. DPH is deeply committed to the success, development, and sustainable growth of
@@ -88,7 +88,7 @@ const cardClass =
       <div
         class="flex justify-center items-center flex-wrap gap-4 sm:gap-6 px-4 sm:px-6 md:px-10 mb-16 md:mb-20"
       >
-        <RouterLink to="/Investment-Banking" :class="cardClass">
+        <RouterLink to="/Investment-Banking" :class="cardClass" class="reveal">
           <!-- Image container -->
           <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
             <img :src="investHomepage" class="h-full w-full object-cover rounded-l-2xl" />
@@ -107,7 +107,7 @@ const cardClass =
         <RouterLink
           to="/Asset-Management"
          :class="cardClass"
-        >
+       class="reveal" >
           <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
             <img
               :src="assetmanagement"
@@ -127,7 +127,7 @@ const cardClass =
         <RouterLink
           to="/Private-Equity"
         :class="cardClass"
-        >
+        class="reveal">
           <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
             <img
               :src="Privateequity"
@@ -147,7 +147,7 @@ const cardClass =
         <RouterLink
           to="/Securities-Trading"
         :class="cardClass"
-        >
+        class="reveal">
           <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
             <img
               :src="securitieshomepage"
@@ -167,7 +167,7 @@ const cardClass =
         <RouterLink
           to="/Trustees"
          :class="cardClass"
-        >
+       class="reveal"> 
           <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
             <img
               :src="Trusteesimg"
