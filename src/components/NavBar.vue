@@ -59,14 +59,31 @@ const businessOpen = ref(false)
   <RouterLink to="/about" class="hidden md:inline-block ml-2"> About Us   </RouterLink>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-170 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
-    <RouterLink to="/about" class="block px-4 py-3 hover:bg-green-50"> Who we are </RouterLink>
+  <div class="grid grid-cols-2 gap-4 p-4 min-w-[420px]">
+  
+  <!-- LEFT: LINKS -->
+  <div class="space-y-2">
+
+       <RouterLink to="/about" class="block px-4 py-3 hover:bg-green-50"> Who we are </RouterLink>
    <RouterLink to="/MDmessage" class="block px-4 py-3 hover:bg-green-50">MD’s Message</RouterLink>
-    <RouterLink to="/Leadership" class="block px-4 py-3 hover:bg-green-50"> Leadership </RouterLink>
+    <RouterLink to="/Leadership" class="block px-4 py-3 hover:bg-green-50"> Leadership </RouterLink> 
+  </div>
+
+  <!-- RIGHT: IMAGE -->
+  <div class="hidden md:block">
+    <img
+      src="/navigation3.png"
+      alt="Our Businesses"
+      class="w-full h-full object-cover rounded-lg"
+    />
+  </div>
+
+</div>
       
   </div>
 
@@ -85,17 +102,43 @@ const businessOpen = ref(false)
   <a href="#" class="cursor-pointer">Our Businesses </a>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-170 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
-    <RouterLink to="/Asset-Management" class="block px-4 py-3 hover:bg-green-50">Asset Management</RouterLink>
-    <RouterLink to="/Investment-Banking" class="block px-4 py-3 hover:bg-green-50">Investment Banking</RouterLink>
-    <RouterLink to="/Private-Equity" class="block px-4 py-3 hover:bg-green-50">Private Equity</RouterLink>
-     <RouterLink to = "/Securities-Trading" class="block px-4 py-3 hover:bg-green-50">Securities Trading</RouterLink>
-     <RouterLink to="/Trustees" class="block px-4 py-3 hover:bg-green-50"> Trustees</RouterLink>
-     
+    <div class="grid grid-cols-2 gap-4 p-4 min-w-[420px]">
+  
+  <!-- LEFT: LINKS -->
+  <div class="space-y-2">
+    <RouterLink to="/Asset-Management" class="block px-3 py-2 rounded hover:bg-green-50">
+      Asset Management
+    </RouterLink>
+    <RouterLink to="/Investment-Banking" class="block px-3 py-2 rounded hover:bg-green-50">
+      Investment Banking
+    </RouterLink>
+    <RouterLink to="/Private-Equity" class="block px-3 py-2 rounded hover:bg-green-50">
+      Private Equity
+    </RouterLink>
+    <RouterLink to="/Securities-Trading" class="block px-3 py-2 rounded hover:bg-green-50">
+      Securities Trading
+    </RouterLink>
+    <RouterLink to="/Trustees" class="block px-3 py-2 rounded hover:bg-green-50">
+      Trustees
+    </RouterLink>
+  </div>
+
+  <!-- RIGHT: IMAGE -->
+  <div class="hidden md:block">
+    <img
+      src="/navigation1.png"
+      alt="Our Businesses"
+      class="w-full h-full object-cover rounded-lg"
+    />
+  </div>
+
+</div>
+
 
   </div>
 </li>
@@ -110,31 +153,64 @@ const businessOpen = ref(false)
          hover:after:w-full font-">
         
 
-         <RouterLink to="/Insight" class="cursor-pointer"> Insights </RouterLink>
+         <RouterLink to="/Insight" class="cursor-pointer"> Resources </RouterLink>
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
+  <div class="absolute left-0 mt-2 w-150 bg-white shadow-lg rounded-lg
               opacity-0 invisible
               group-hover:opacity-100 group-hover:visible
               transition-all duration-300 z-50">
 
-    <!-- <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 1</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 2</a>
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Products 3</a> -->
+     <div class="grid grid-cols-2 gap-4 p-4 min-w-[420px]">
+  
+  <!-- LEFT: LINKS -->
+  <div class="space-y-2">
+   <RouterLink to="/Insight" class="block px-4 py-3 hover:bg-green-50">Insights</RouterLink>
+    <RouterLink to="/gallery" class="block px-4 py-3 hover:bg-green-50">Gallery</RouterLink> 
+    <RouterLink to="/gallery" class="block px-4 py-3 hover:bg-green-50">Career</RouterLink> 
+    <RouterLink to="/gallery" class="block px-4 py-3 hover:bg-green-50">Policy</RouterLink> 
+
+    
   </div>
+
+  <!-- RIGHT: IMAGE -->
+  <div class="hidden md:block">
+    <img
+      src="/navigation2.png"
+      alt="Our Businesses"
+      class="w-full h-full object-cover rounded-lg"
+    />
+  </div>
+
+</div>
+    <!-- <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
+              opacity-0 invisible
+              group-hover:opacity-100 group-hover:visible
+              transition-all duration-300 z-50">
+    <a href="#" class="block px-4 py-3 hover:bg-green-50">Policy
+
+ <a href="#" class="block px-4 py-3 hover:bg-green-50">Cookies Policy</a>
+  <a href="#" class="block px-4 py-3 hover:bg-green-50">Private Policy</a>
+   <a href="#" class="block px-4 py-3 hover:bg-green-50">Terms and Conditions</a>
+    </a>
+   </div>
+
+</div> -->
+
+</div>
          
         </li>
 
 
-               <li class="relative inline-block group
+               <!-- <li class="relative inline-block group
          after:content-['']
          after:absolute after:left-0 after:-bottom-1
          after:h-0.5 after:w-0
          after:bg-green-700
          after:transition-all after:duration-300
-         hover:after:w-full">
+         hover:after:w-full"> -->
         
-        <RouterLink to="/career" class="cursor-pointer">Career </RouterLink>
+        <!-- <RouterLink to="/career" class="cursor-pointer">Career </RouterLink> -->
 
   <!-- Dropdown -->
   <!-- <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
@@ -147,7 +223,7 @@ const businessOpen = ref(false)
     <a href="#" class="block px-4 py-3 hover:bg-green-50">Financial Education Content</a>
      
   </div> -->
-</li>
+<!-- </li> -->
 
 
         

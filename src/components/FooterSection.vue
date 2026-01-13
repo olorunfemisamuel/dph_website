@@ -11,30 +11,30 @@
                 <div>
                     <h3 class="text-lg font-bold mb-4 text-green-400">ABOUT US</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Overview</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Version & Mission</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Leadership Team Profile</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Policy & Compliance</a></li>
+                        <li><RouterLink to="/about" class="text-gray-300 hover:text-white transition">Who we are</RouterLink></li>
+                        <li><RouterLink to="/MDmessage" class="text-gray-300 hover:text-white transition">MD's Message</RouterLink></li>
+                        <li><RouterLink to = "/Leadership" class="text-gray-300 hover:text-white transition">Leadership</RouterLink></li>
+                        <!-- <li><a href="#" class="text-gray-300 hover:text-white transition">Policy & Compliance</a></li> -->
                     </ul>
                 </div>
 
                 <!-- Column 2: OUR SERVICES -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">OUR SERVICES</h3>
+                    <h3 class="text-lg font-bold mb-4 text-green-400">OUR BUSINESSES</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Assess Management</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Investment Banking</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Private Equity</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Security Trading</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Trustees</a></li>
+                        <li><RouterLink to="/Asset-Management" class="text-gray-300 hover:text-white transition">Asset Management</RouterLink></li>
+                        <li><RouterLink to="/Investment-Banking" class="text-gray-300 hover:text-white transition">Investment Banking</RouterLink></li>
+                        <li><RouterLink to="/Private-Equity" class="text-gray-300 hover:text-white transition">Private Equity</RouterLink></li>
+                        <li><RouterLink to="/Securities-Trading" class="text-gray-300 hover:text-white transition">Security Trading</RouterLink></li>
+                        <li><RouterLink to="/Trustees" class="text-gray-300 hover:text-white transition">Trustees</RouterLink></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: PRODUCT -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">PRODUCT</h3>
+                    <h3 class="text-lg font-bold mb-4 text-green-400">RESOURCES</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Assess Management</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition"></a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Investment Banking</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Private Equity</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Security Trading</a></li>
@@ -44,7 +44,7 @@
 
                 <!-- Column 4: INVESTOR RELATIONS -->
                 <div>
-                    <h3 class="text-lg font-bold mb-4 text-green-400">INVESTOR RELATIONS</h3>
+                    <h3 class="text-lg font-bold mb-4 text-green-400">CONTACT</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Annual Statement</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Financial Report</a></li>

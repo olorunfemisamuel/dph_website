@@ -1,5 +1,22 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
+
+onMounted(() => {
+  const map = L.map('contact-map').setView([6.4541, 3.3947], 12) // Lagos coords
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+  }).addTo(map)
+
+  L.marker([6.4541, 3.3947])
+    .addTo(map)
+    .bindPopup('Lagos Office')
+    .openPopup()
+})
 </script>
+
 
 <template>
   <div class="bg-white">
@@ -30,7 +47,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
 
         <!-- Card -->
-        <div class="bg-white rounded-xl shadow-sm p-4 sm:p-5 flex gap-4 items-center">
+        <!-- <div class="bg-white rounded-xl shadow-sm p-4 sm:p-5 flex gap-4 items-center">
           <img src="@/assets/contactimg.png" class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover" />
           <div>
             <h4 class="font-semibold text-sm">Lagos</h4>
@@ -38,14 +55,14 @@
               7th Floor, UBA House, Marina
             </p>
           </div>
-        </div>
+        </div> -->
 
         <div class="bg-white rounded-xl shadow-sm p-4 sm:p-5 flex gap-4 items-center">
           <img src="@/assets/contactimg.png" class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg object-cover" />
           <div>
             <h4 class="font-semibold text-sm">Abuja</h4>
             <p class="text-xs text-gray-500">
-              Plot 7, Central Business District
+             Plot 3 Peter Obang Close, Off O.P. Fingesi Street, Utako District, Abuja
             </p>
           </div>
         </div>
@@ -80,7 +97,7 @@
             </li>
             <li class="flex items-center gap-3">
               <span class="text-green-700">📍</span>
-              Lagos, Nigeria
+             Plot 3 Peter Obang Close, Off O.P. Fingesi Street, Utako District, Abuja
             </li>
           </ul>
         </div>
@@ -135,7 +152,12 @@
 
     <!-- ================= MAP ================= -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 my-12 sm:my-16">
-      <div class="h-55 sm:h-65 md:h-65 bg-gray-300 rounded-xl"></div>
+    <iframe
+  class="w-full h-55 sm:h-65 md:h-65 rounded-xl border-0"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps?q=Plot%203%20Peter%20Obang%20Close,%20Off%20O.P.%20Fingesi%20Street,%20Utako%20District,%20Abuja&output=embed"
+></iframe>
     </section>
 
   </div>

@@ -65,16 +65,16 @@ localStorage.removeItem('cookiePrefs')
       </p>
 
       <!-- Categories -->
-      <div class="space-y-2">
-        <!-- Essential -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between border rounded-lg p-2 sm:p-3">
+     <!-- <div class="space-y-2"> -->
+        <!-- Essential --> 
+        <!-- <div class="flex flex-col sm:flex-row sm:items-center justify-between border rounded-lg p-2 sm:p-3">
           <div class="mb-1 sm:mb-0">
             <h3 class="font-semibold text-sm sm:text-base">Essential Cookies</h3>
             <p class="text-xs sm:text-sm text-gray-500">Required for the website to function properly.</p>
           </div>
           <input type="checkbox" checked disabled class="ml-0 sm:ml-4" />
         </div>
-      </div>
+      </div> -->
 
       <!-- Actions -->
       <div class="flex flex-col sm:flex-row justify-end gap-2 mt-2">

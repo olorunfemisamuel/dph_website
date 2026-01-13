@@ -2,6 +2,28 @@
 import newsletterimg1 from '@/assets/newsletterimg/newsletterimg1.png';
 import newsletterimg2 from '@/assets/newsletterimg/newsletterimg2.png';
 import newsletterimg3 from '@/assets/newsletterimg/newsletterimg3.png';
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
+  });
+});
+
 
 
 import { ref, computed } from 'vue';
@@ -42,8 +64,8 @@ const visibleCards = computed(() => {
   });
 });
 
-const goTo = () => {
-  currentIndex.value = (currentIndex.value + 1) % cards.length;
+const goTo = (index: number) => {
+  currentIndex.value = index;
 };
 
 </script>
@@ -55,11 +77,13 @@ const goTo = () => {
 
 
       <!-- News Card 1 -->
-  <div
+<div
   v-for="(card, index) in visibleCards"
   :key="card.img"
-  class="bg-white rounded-lg shadow-sm hover:shadow-black overflow-hidden transition-transform duration-300 hover:scale-110"
+  class="bg-white rounded-lg shadow-sm hover:shadow-black overflow-hidden transition-transform duration-300 hover:scale-110 reveal"
+  :style="{ transitionDelay: `${index * 120}ms` }"
 >
+
   <img
     :src="card.img"
     alt="News Image"
@@ -129,4 +153,20 @@ const goTo = () => {
     </div>
     
   </div>
+
+  
 </template>
+
+<style scoped>
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+

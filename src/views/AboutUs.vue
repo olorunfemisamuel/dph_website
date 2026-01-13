@@ -12,9 +12,9 @@ onMounted(() => {
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("show");
-        else {
-          entry.target.classList.remove("show");  
-        }
+        // else {
+        //   entry.target.classList.remove("show");  
+        // }
       });
     },
     { threshold: 0.2 }
@@ -46,13 +46,14 @@ onMounted(() => {
 
 <section class="w-full max-w-7xl mx-auto mt-10 px-4 sm:px-6">
   <div class="text-center mb-6 sm:mb-8">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 reveal">
+
       About Deusthe Partners Holding (DPH)
     </h2>
   </div>
 
   <div class="flex justify-center">
-    <div class="w-full lg:w-11/12 border-l-4 border-gray-300 pl-6">
+    <div class="w-full lg:w-11/12 border-l-4 border-gray-300 pl-6 reveal">
       <p class="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
         DPH is much more than a common financial services group. We are a boutique of experts committed to creating a legacy for our clients and ourselves; by providing first-class investment and financial solutions for individuals and institutions. Since our inception, we have built a reputation for professionalism and reliability; our focus on achieving sustainable value creation, such as managing wealth, providing capital, and creating strategic business solutions for our clients. Through our boutiques of experts, we strive to achieve a culture of excellence and innovation that remains the hallmark of our service delivery to our clients and partners. We are set to grow and thrive in a competitive and ever-evolving market and we look forward to the opportunities that lie ahead as we continue to build a lasting legacy for the future.
       </p>
@@ -63,10 +64,11 @@ onMounted(() => {
 <section class="w-full max-w-7xl mx-auto mt-12 px-4 sm:px-6">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
 
-    <div 
-      class="relative overflow-hidden rounded-2xl  min-h-[300px] md:min-h-[400px] flex flex-col justify-center items-center text-center px-8 py-12 bg-cover bg-center"
-      :style="{ backgroundImage: `url(${Ourmissionimg})` }"
-    >
+   <div 
+  class="relative overflow-hidden rounded-2xl min-h-[300px] md:min-h-[400px] flex flex-col justify-center items-center text-center px-8 py-12 bg-cover bg-center reveal"
+  :style="{ backgroundImage: `url(${Ourmissionimg})` }"
+>
+
       <div class="absolute inset-0 bg-black/90 z-0"></div>
 
       <div class="relative z-10 text-white">
@@ -77,10 +79,11 @@ onMounted(() => {
       </div>
     </div>
 
-    <div 
-      class="relative overflow-hidden rounded-2xl shadow-xl min-h-[300px] md:min-h-[400px] flex flex-col justify-center items-center text-center px-8 py-12 bg-cover bg-center"
-      :style="{ backgroundImage: `url(${Ourvisionimg})` }"
-    >
+   <div 
+  class="relative overflow-hidden rounded-2xl shadow-xl min-h-[300px] md:min-h-[400px] flex flex-col justify-center items-center text-center px-8 py-12 bg-cover bg-center reveal"
+  :style="{ backgroundImage: `url(${Ourvisionimg})` }"
+>
+
       <div class="absolute inset-0 bg-black/90 z-0"></div>
 
       <div class="relative z-10 text-white">
@@ -105,7 +108,7 @@ onMounted(() => {
 
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 px-4 md:px-0 mb-12 md:mb-16 lg:mb-20">
     <!-- Accountability -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600">
+   <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600 reveal" style="transition-delay: 0ms">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
           <i class="far fa-list-alt text-green-600 text-2xl"></i>
@@ -118,7 +121,8 @@ onMounted(() => {
     </div>
 
     <!-- Excellence -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-blue-600">
+   <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600 reveal" style="transition-delay: 100ms">
+
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
           <i class="far fa-star text-blue-600 text-2xl"></i>
@@ -131,7 +135,7 @@ onMounted(() => {
     </div>
 
     <!-- Customer Focus -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-black">
+   <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600 reveal" style="transition-delay: 200ms">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
           <i class="fas fa-crosshairs text-gray-700 text-2xl"></i>
@@ -144,7 +148,7 @@ onMounted(() => {
     </div>
 
     <!-- Integrity -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600">
+   <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600 reveal" style="transition-delay: 300ms">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
           <i class="far fa-check-circle text-green-600 text-2xl"></i>
@@ -157,7 +161,7 @@ onMounted(() => {
     </div>
 
     <!-- Social Responsibility -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-blue-600">
+    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600 reveal" style="transition-delay: 400ms">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
           <i class="fas fa-users text-blue-600 text-2xl"></i>
@@ -170,7 +174,7 @@ onMounted(() => {
     </div>
 
     <!-- Transparency -->
-    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-black">
+   <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow hover:border-green-600 reveal" style="transition-delay: 500ms">
       <div class="flex justify-center mb-4">
         <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
           <i class="far fa-eye text-gray-700 text-2xl"></i>

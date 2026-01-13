@@ -78,7 +78,7 @@ const cardClass =
 
     <!---What we do section-->
     <div class="bg-[#F0F5F7] py-1">
-      <h2 class="reveal text-4xl font-bold  text-gray-500 mt-20 mb-10 ml-18">What We Do</h2>
+      <h2 class="reveal text-4xl font-bold  text-gray-500 mt-20 mb-10 ml-20">What We Do</h2>
       <p class="reveal  text-gray-600 mx-6 sm:mx-10 md:mx-20 mb-8 md:mb-10  text-justify">
         Deutsche Partners Holding (DPH) is an independently owned financial services group with core
         expertise in Asset Management, Investment Banking, Private Equity, Securities, and
