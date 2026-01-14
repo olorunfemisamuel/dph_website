@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
+// import L from 'leaflet'
+// import 'leaflet/dist/leaflet.css'
 
-onMounted(() => {
-  const map = L.map('contact-map').setView([6.4541, 3.3947], 12) // Lagos coords
+// onMounted(() => {
+//   const map = L.map('contact-map').setView([6.4541, 3.3947], 12) // Lagos coords
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-  }).addTo(map)
+//   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '© OpenStreetMap contributors',
+//   }).addTo(map)
 
-  L.marker([6.4541, 3.3947])
-    .addTo(map)
-    .bindPopup('Lagos Office')
-    .openPopup()
-})
+//   L.marker([6.4541, 3.3947])
+//     .addTo(map)
+//     .bindPopup('Lagos Office')
+//     .openPopup()
+// })
 </script>
 
 
