@@ -13,13 +13,13 @@ const toggleChat = () => {
   <button
     @click="toggleChat"
     class="fixed bottom-6 right-6 z-50
-           h-11 w-40 rounded-full
+           h-11 w-10 rounded-full
            bg-green-700 hover:bg-green-800
            text-white shadow-lg
            flex items-center justify-center
            transition"
   >
-    💬 Chat with Lola
+    💬
   </button>
 
   <!-- Chat Window -->

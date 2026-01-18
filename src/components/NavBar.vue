@@ -1,31 +1,47 @@
 <script setup lang="ts">
+
 import { ref } from 'vue'
 
-
 const isMenuOpen = ref(false)
+const aboutOpen = ref(false)
+const businessOpen = ref(false)
 
-let lastScrollY = window.scrollY
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
-const aboutOpen = ref(false)
 
-const businessOpen = ref(false)
 
+
+
+const megaOpen = ref(false)
+let closeTimer: number | null = null
+
+const openMega = () => {
+  if (closeTimer) {
+    clearTimeout(closeTimer)
+    closeTimer = null
+  }
+  megaOpen.value = true
+}
+
+const closeMega = () => {
+  closeTimer = window.setTimeout(() => {
+    megaOpen.value = false
+  }, 180)
+}
 
 
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 w-full z-50 px-4 pt-6 bg-transparent">
+ <header class="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
+
    
-    <nav class="max-w-7xl mx-auto bg-white
-         rounded-[28px] md:rounded-full
-         shadow-lg
-         flex items-center justify-between
-         py-4 px-6 md:px-8">
+    <nav class="w-full
+     flex items-center justify-between
+     py-4 px-6 md:px-12">
          <img src = "/dphLogo.jpg" alt="DPH Logo" class="h-10 w-auto"/>
         
           <!-- <img src="dphLogo.jpg" alt="DPH Logo" class="h-10 w-auto"/> -->
@@ -90,58 +106,136 @@ const businessOpen = ref(false)
 </li>
 
 
+<li
+  class="relative"
+  @mouseenter="openMega"
+  @mouseleave="closeMega"
+>
+  <!-- TRIGGER -->
+  <span
+    class="cursor-pointer relative
+           after:content-['']
+           after:absolute after:left-0 after:-bottom-1
+           after:h-0.5 after:w-0
+           after:bg-green-700
+           after:transition-all after:duration-300
+           hover:after:w-full"
+  >
+    Our Businesses
+  </span>
 
-         <li class="relative inline-block group
-  after:content-['']
-  after:absolute after:left-0 after:-bottom-1
-  after:h-0.5 after:w-0
-  after:bg-green-700
-  after:transition-all after:duration-300
-  hover:after:w-full">
+  <!-- MEGA MENU -->
+  <div
+    v-show="megaOpen"
+    class="absolute left-1/2 top-full mt-6 -translate-x-1/2
+           w-[1100px] bg-white rounded-2xl shadow-xl
+           p-6 z-50"
+  >
+    <div class="grid grid-cols-[240px_1fr_320px] gap-6">
 
-  <a href="#" class="cursor-pointer">Our Businesses </a>
+      <!-- LEFT -->
+      <div class="border-r pr-4">
+        <p class="text-xs tracking-widest text-gray-400 mb-4">
+          OUR BUSINESSES
+        </p>
 
-  <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-170 bg-white shadow-lg rounded-lg
-              opacity-0 invisible
-              group-hover:opacity-100 group-hover:visible
-              transition-all duration-300 z-50">
+        <ul class="space-y-2">
+          <RouterLink to="/Asset-Management"
+            class="block px-4 py-3 rounded-lg bg-gray-100 font-medium">
+            Asset Management
+          </RouterLink>
 
-    <div class="grid grid-cols-2 gap-4 p-4 min-w-[420px]">
-  
-  <!-- LEFT: LINKS -->
-  <div class="space-y-2">
-    <RouterLink to="/Asset-Management" class="block px-3 py-2 rounded hover:bg-green-50">
-      Asset Management
-    </RouterLink>
-    <RouterLink to="/Investment-Banking" class="block px-3 py-2 rounded hover:bg-green-50">
-      Investment Banking
-    </RouterLink>
-    <RouterLink to="/Private-Equity" class="block px-3 py-2 rounded hover:bg-green-50">
-      Private Equity
-    </RouterLink>
-    <RouterLink to="/Securities-Trading" class="block px-3 py-2 rounded hover:bg-green-50">
-      Securities Trading
-    </RouterLink>
-    <RouterLink to="/Trustees" class="block px-3 py-2 rounded hover:bg-green-50">
-      Trustees
-    </RouterLink>
-  </div>
+          <RouterLink to="/Investment-Banking"
+            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            Investment Banking
+          </RouterLink>
 
-  <!-- RIGHT: IMAGE -->
-  <div class="hidden md:block">
-    <img
-      src="/navigation1.png"
-      alt="Our Businesses"
-      class="w-full h-full object-cover rounded-lg"
-    />
-  </div>
+          <RouterLink to="/Private-Equity"
+            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            Private Equity
+          </RouterLink>
 
-</div>
+          <RouterLink to="/Securities-Trading"
+            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            Securities Trading
+          </RouterLink>
 
+          <RouterLink to="/Trustees"
+            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            Trustees
+          </RouterLink>
+        </ul>
+      </div>
 
+      <!-- MIDDLE -->
+      <div>
+        <p class="text-xs tracking-widest text-gray-400 mb-4">
+          WHAT WE DO
+        </p>
+
+        <div class="space-y-4">
+          <div>
+            <p class="font-medium">Asset Management</p>
+            <p class="text-sm text-gray-500">
+              Portfolio and fund management solutions
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Investment Banking</p>
+            <p class="text-sm text-gray-500">
+              Advisory and capital raising services
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Private Equity</p>
+            <p class="text-sm text-gray-500">
+              Long-term strategic investments
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Securities Trading</p>
+            <p class="text-sm text-gray-500">
+              Execution and market access
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Trustees</p>
+            <p class="text-sm text-gray-500">
+              Independent fiduciary services
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="bg-gray-50 rounded-xl p-4 flex flex-col justify-between">
+        <img
+          src="/navigation1.png"
+          alt="Our Businesses"
+          class="rounded-lg mb-4"
+        />
+
+        <p class="font-medium text-lg">
+          Explore our<br />
+          <span class="font-semibold">business divisions</span>
+        </p>
+
+        <RouterLink
+          to="/contact"
+          class="mt-4 text-center border border-black rounded-lg py-2"
+        >
+          Contact Us
+        </RouterLink>
+      </div>
+
+    </div>
   </div>
 </li>
+
 
 
 <li class="relative inline-block group
