@@ -162,10 +162,8 @@ onBeforeUnmount(() => {
 const isFirstSlide = () => activeSlide.value === 0
 
 const currentSlide = computed<SlideType>(() => {
-  const slide = slides[activeSlide.value]
-  return slide !== undefined ? slide : slides[0]
+  return (slides[activeSlide.value] ?? slides[0]) as SlideType
 })
-
 </script>
 
 <template>
