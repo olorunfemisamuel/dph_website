@@ -11,7 +11,7 @@ const activeAboutSub = ref<AboutSub>('who')
 //  const activeLeadershipSub = ref <LeadershipSub>(null) 
 
 const isMenuOpen = ref(false)
-// const aboutOpen = ref(false)
+const aboutOpen = ref(false)
 const businessOpen = ref(false)
 
 
