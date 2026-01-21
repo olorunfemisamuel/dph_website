@@ -392,34 +392,34 @@ const closeAllMenus = () => {
 
          <div v-if="activeServicesSub === 'asset'" class="space-y-8">
           <div>
-            <p class="font-medium">Private Wealth Management</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Private Wealth Management</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Fund Management and Advisory</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Fund Management and Advisory</p>
             <p class="text-sm text-gray-500">
          
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Collective Investment Scheme</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Collective Investment Scheme</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Special Investment Scheme</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Special Investment Scheme</p>
             <p class="text-sm text-gray-500">
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Portofolio Management</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Portofolio Management</p>
             <p class="text-sm text-gray-500">
               
             </p>
@@ -431,7 +431,7 @@ const closeAllMenus = () => {
 
  <div v-if="activeServicesSub === 'investment'" class="space-y-8">
           <div>
-            <p class="font-medium">Corporate Finance</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Corporate Finance</p>
             <p class="text-sm text-gray-500">
              
             </p>
@@ -453,7 +453,7 @@ const closeAllMenus = () => {
           </div>
 
           <div>
-            <p class="font-medium">Public Sector Advisory</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Public Sector Advisory</p>
             <p class="text-sm text-gray-500">
               
             </p>
@@ -483,7 +483,7 @@ const closeAllMenus = () => {
           </div>
 
           <div>
-            <p class="font-medium">Structured Finance</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Structured Finance</p>
 
             <p class="text-sm text-gray-500">
            
@@ -507,7 +507,7 @@ const closeAllMenus = () => {
           </div>
 
           <div>
-            <p class="font-medium">Research & Intelligence</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Research & Intelligence</p>
             <p class="text-sm text-gray-500">
              
             </p>
@@ -533,34 +533,34 @@ const closeAllMenus = () => {
 
         <div v-if="activeServicesSub === 'private'" class="space-y-8">
           <div>
-            <p class="font-medium">Private Equity Funds</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Private Equity Funds</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Business Incubation Investment</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Business Incubation Investment</p>
             <p class="text-sm text-gray-500">
          
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Health Investment</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Health Investment</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Hospitality & Entertainment Investment</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Hospitality & Entertainment Investment</p>
             <p class="text-sm text-gray-500">
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Real Estate Investment Trust</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Real Estate Investment Trust</p>
             <p class="text-sm text-gray-500">
               
             </p>
@@ -571,34 +571,34 @@ const closeAllMenus = () => {
 
         <div v-if="activeServicesSub === 'securities'" class="space-y-8">
           <div>
-            <p class="font-medium">Equity Trading</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Equity Trading</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Fixed Income Trading</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Fixed Income Trading</p>
             <p class="text-sm text-gray-500">
          
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Propriety Trading</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Propriety Trading</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Security Analysis</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Security Analysis</p>
             <p class="text-sm text-gray-500">
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Economic Profiling</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Economic Profiling</p>
             <p class="text-sm text-gray-500">
               
             </p>
@@ -606,43 +606,43 @@ const closeAllMenus = () => {
         </div>
 
 
-        <div v-if="activeServicesSub === 'trustees'" class="space-y-8">
+        <div v-if="activeServicesSub === 'trustees'" class="space-y-5">
           <div>
-            <p class="font-medium">Secured and unsecured note issuances</p>
-            <p class="text-sm text-gray-500">
+            <p class="cursor-pointer px-1 py-3 rounded-lg hover:bg-green-100 font-medium">Secured and unsecured note issuances</p>
+            <p class="text-sm text-gray-500 ">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Securitization and structured financings</p>
+            <p class="font-medium cursor-pointer px-1 py-3 rounded-lg hover:bg-green-100">Securitization and structured financings</p>
             <p class="text-sm text-gray-500">
          
             </p>
           </div>
 
           <div>
-            <p class="font-medium">EMTN Programmes</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">EMTN Programmes</p>
             <p class="text-sm text-gray-500">
             
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Retail bonds</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Retail bonds</p>
             <p class="text-sm text-gray-500">
             </p>
           </div>
 
           <div>
-            <p class="font-medium">High Yield and emerging markets bonds</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">High Yield and emerging markets bonds</p>
             <p class="text-sm text-gray-500">
               
             </p>
           </div>
 
            <div>
-            <p class="font-medium">Convertible and Equity linked bonds</p>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Convertible and Equity linked bonds</p>
             <p class="text-sm text-gray-500">
             </p>
           </div>
