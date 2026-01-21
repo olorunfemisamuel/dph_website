@@ -11,12 +11,12 @@ import InsightsPage from '@/components/InsightsPage.vue';
 
       <!-- CATEGORY -->
       <p class="text-xs uppercase tracking-widest text-gray-400 mb-3 text-center">
-        Private Banking
+      MARKET TRENDS
       </p>
 
       <!-- TITLE -->
       <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-6">
-        Private Banking – Access, Innovation and Next Pathways in Progress
+      Market Trends 2024
       </h1>
 
       <!-- FEATURED IMAGE -->

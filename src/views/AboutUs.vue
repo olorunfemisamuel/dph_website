@@ -54,8 +54,57 @@ onMounted(() => {
 
   <div class="flex justify-center">
     <div class="w-full lg:w-11/12 border-l-4 border-gray-300 pl-6 reveal">
-      <p class="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
-        DPH is much more than a common financial services group. We are a boutique of experts committed to creating a legacy for our clients and ourselves; by providing first-class investment and financial solutions for individuals and institutions. Since our inception, we have built a reputation for professionalism and reliability; our focus on achieving sustainable value creation, such as managing wealth, providing capital, and creating strategic business solutions for our clients. Through our boutiques of experts, we strive to achieve a culture of excellence and innovation that remains the hallmark of our service delivery to our clients and partners. We are set to grow and thrive in a competitive and ever-evolving market and we look forward to the opportunities that lie ahead as we continue to build a lasting legacy for the future.
+      <p class="text-black text-sm md:text-base leading-relaxed text-justify">
+      
+Deutsche Partners
+Holding (DPH) is an
+independently-owned
+financial services Group with core
+competence and specialty in
+Asset Management, Investment
+Banking, Private Equity, Securities
+and Trustees.
+DPH is a Group that is strongly
+committed to the success,
+development and growth of her
+clients and their assets. We create
+solutions that are relevant and
+add value to the specific needs
+and goals of each one of our
+clients. We work with a diversified
+clientele that consists of Financial
+Institutions, Corporations, Private
+Clients and Governments. We are
+licensed and registered as
+Fund/Portfolio Managers, Issuing
+House, Investment Adviser
+amongst others by the Securities
+& Exchange Commission (SEC).
+We are qualified to provide a wide
+range of financial services to our
+clients including individuals,
+corporate & financial Institutions,
+as well as high net worth
+individuals.
+We understand that our clients
+DPH contributes to the
+vitalization of household financial
+assets by providing high quality
+products and services that are
+suitable for medium to long term
+asset building for individuals.
+have different needs and
+objectives, and this is reflected in
+our tailored investment
+approach. Decisions are not
+made for clients: instead, they
+are advised and educated in
+order to make their own
+informed investment decisions.
+Clients are treated with the
+utmost respect as we recognize
+their concerns and their financial
+needs.
       </p>
     </div>
   </div>

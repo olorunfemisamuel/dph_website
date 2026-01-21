@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import hompageimagedph from '@/assets/hompageimagedph.png'
+
 import InsightsPage from '@/components/InsightsPage.vue'
 import investHomepage from '@/assets/investHomepage.png'
 import assetmanagement from '@/assets/assetmanagement.png'
@@ -12,7 +12,7 @@ import thirdsliderImage from '@/assets/thirdsliderImage.png'
 import fourthsliderImage from '@/assets/fourthsliderImage.png'
 import fifthsliderImage from '@/assets/fifthsliderImage.png'
 import sixthsliderImage from '@/assets/sixthsliderImage.png'
-import venturecapitalimage from '@/assets/venturecapitalimage.png'
+import venturecapitalimage from '@/assets/venturecapitalimg.png'
 import { computed } from 'vue'
 
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
@@ -146,7 +146,7 @@ const goToSlide = (index: number) => {
 function startSlider() {
   sliderTimer = window.setInterval(function () {
     activeSlide.value = (activeSlide.value + 1) % slides.length
-  }, 6000) // 6 seconds
+  }, 5000) // 6 seconds
 }
 
 
@@ -168,7 +168,7 @@ const currentSlide = computed<SlideType>(() => {
 
 <template>
   <main class="overflow-x-hidden">
-   <div class="relative w-full sm:h-screen h-[75%] overflow-hidden">
+  <div class="relative w-full sm:h-screen min-h-[60vh] overflow-hidden">
   <div class="relative w-full h-screen overflow-hidden">
   <!-- SLIDES -->
   <div class="absolute inset-0">
@@ -202,7 +202,7 @@ const currentSlide = computed<SlideType>(() => {
     <div class="text-white z-20">
       <h2 class="font-semibold text-4xl md:text-6xl leading-tight mb-6">
         Creating Wealth <br />
-        For The Future
+        For The <span class="text-green-400">Future</span> 
       </h2>
 
       <p class="text-gray-300 max-w-md mb-8">
@@ -219,13 +219,13 @@ const currentSlide = computed<SlideType>(() => {
     </div>
 
     <!-- RIGHT IMAGE -->
-    <div class="flex justify-center md:justify-end">
-      <img
-        :src="currentSlide.src"
-        class="max-h-[500px] object-contain"
-        alt="Hero Image"
-      />
-    </div>
+   <div class="flex justify-center md:justify-end mt-8 md:mt-0">
+  <img
+    :src="currentSlide.src"
+    class="w-full max-w-[300px] md:max-w-none md:max-h-[500px] object-contain"
+    alt="Hero Image"
+  />
+</div>>
 
   </div>
 </div>

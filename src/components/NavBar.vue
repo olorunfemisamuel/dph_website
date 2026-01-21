@@ -2,8 +2,16 @@
 
 import { ref } from 'vue'
 
+type AboutSub = 'who'| 'lead' | 'sub' | null
+const activeAboutSub = ref<AboutSub>('who')
+
+
+
+//  type LeadershipSub = 'Lead' | null
+//  const activeLeadershipSub = ref <LeadershipSub>(null) 
+
 const isMenuOpen = ref(false)
-const aboutOpen = ref(false)
+// const aboutOpen = ref(false)
 const businessOpen = ref(false)
 
 
@@ -15,22 +23,63 @@ const toggleMenu = () => {
 
 
 
-const megaOpen = ref(false)
+
+
+type MegaMenu = 'about' | 'services' | 'resources' | null
+
+const activeMega = ref<MegaMenu>(null)
+
+
+  //ServicesSub
+ type ServicesSub =
+  | 'asset'
+  | 'investment'
+  | 'private'
+  | 'securities'
+  | 'trustees'
+  | null
+
+const activeServicesSub = ref<ServicesSub>('asset')
+
+
+
 let closeTimer: number | null = null
 
-const openMega = () => {
+const openMega = (menu: MegaMenu) => {
   if (closeTimer) {
     clearTimeout(closeTimer)
     closeTimer = null
   }
-  megaOpen.value = true
+
+  activeMega.value = menu
+
+  // DEFAULT SUB MENUS
+  if (menu === 'about') {
+    activeAboutSub.value = 'who'
+  }
+
+  if (menu === 'services') {
+    activeServicesSub.value = 'asset'
+  }
 }
+
+
+
 
 const closeMega = () => {
   closeTimer = window.setTimeout(() => {
-    megaOpen.value = false
+    activeMega.value = null
   }, 180)
 }
+
+
+const closeAllMenus = () => {
+  activeMega.value = null
+  activeAboutSub.value = null
+  activeServicesSub.value = null
+  isMenuOpen.value = false
+}
+
 
 
 </script>
@@ -64,69 +113,227 @@ const closeMega = () => {
   </li>
 
 
-            <li class="relative inline-block group
+  <li
+  class="relative"
+  @mouseenter="openMega('about')"
+  @mouseleave="closeMega"
+>
+  <span class="cursor-pointer relative hover:after:w-full">
+    About Us
+  </span>
+
+  <div
+  v-show="activeMega === 'about'"
+  @mouseleave="activeAboutSub = null"
+  class="absolute left-11/12 top-full mt-6 -translate-x-1/2
+         w-[1100px] bg-white rounded-2xl shadow-xl
+         p-6 z-50"
+>
+
+    <div class="grid grid-cols-[240px_1fr_320px] gap-6">
+
+      <!-- LEFT -->
+      <div class="border-r pr-4">
+        <p class="text-xs tracking-widest text-gray-400 mb-4">
+          About Us
+        </p>
+
+        <ul class="space-y-2">
+         <RouterLink
+  to="/about"
+  class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
+  @mouseenter="activeAboutSub = 'who'"
+@click="closeAllMenus"
+>
+  Who We Are
+</RouterLink>
+
+
+
+          <RouterLink to="/MDmessage"
+            class="block px-4 py-3 rounded-lg hover:bg-green-100"
+             @click="closeAllMenus">
+            MD's Message
+          </RouterLink>
+
+          <RouterLink to="/Leadership"
+            class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
+             @mouseenter="activeAboutSub = 'lead'"
+             @click="closeAllMenus"
+           > 
+            Leadership
+          </RouterLink>
+
+            <RouterLink to="/Private-Equity"
+            class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
+            @mouseenter="activeAboutSub ='sub'"
+            @click="closeAllMenus"
+           > 
+          Subsidiaries
+          </RouterLink>
+        </ul>
+      </div>
+
+      <!-- MIDDLE MENU FOR WHO WE ARE -->
+<div>
+  <p class="text-xs tracking-widest text-gray-400 mb-4">
+    OVERVIEW
+  </p>
+
+  <!-- WHO WE ARE CONTENT -->
+  <div v-if="activeAboutSub === 'who'" class="space-y-8">
+    <RouterLink
+      to="/about#mission"
+      class="block font-medium hover:text-green-700"
+      @click="closeAllMenus"
+    >
+      Mission
+    </RouterLink>
+
+    <RouterLink
+      to="/about#vision"
+      class="block font-medium hover:text-green-700"
+      @click="closeAllMenus"
+    >
+      Vision
+    </RouterLink>
+
+    <RouterLink
+      to="/about#core-values"
+      class="block font-medium hover:text-green-700"
+      @click="closeAllMenus"
+    >
+      Core Values
+    </RouterLink>
+  </div>
+
+  <!----END OF MIDDLE MENU FOR WHO WE ARE -->
+
+
+
+
+
+
+
+<!---Middle Menu For Leadership Sub Menu-->
+
+   <div v-if="activeAboutSub === 'lead'" class="space-y-8">
+
+       <RouterLink
+      to="/Leadership"
+      class="block font-medium hover:text-green-700"
+      @click="closeAllMenus"
+    >
+      Board Of Directors
+    </RouterLink>
+
+       <RouterLink
+      to="/Leadership"
+      class="block font-medium hover:text-green-700"
+      @click="closeAllMenus"
+    >
+    Team Members
+    </RouterLink>
+   </div>
+
+
+   <!---End of Middle Menu For Leadership Sub Menu-->
+
+
+
+
+
+
+
+
+
+  <!----MIDDLE MENU FOR Subsidiaries -->
+<div v-if="activeAboutSub === 'sub'" class="space-y-8">
+  <RouterLink to="/about#mission" class="block font-medium hover:text-green-700"
+  @click="closeAllMenus">
+    Deutsche Asset Management Limited
+  </RouterLink>
+
+  <RouterLink to="/about#mission" class="block font-medium hover:text-green-700"
+ @click="closeAllMenus"
+  >
+    Deutsche Capital Limited
+  </RouterLink>
+
+  <RouterLink to="/about#mission" class="block font-medium hover:text-green-700"
+  @click="closeAllMenus"
+  >
+    Deutsche Private Equity Limited
+  </RouterLink>
+
+  <RouterLink to="/about#mission" class="block font-medium hover:text-green-700"
+  @click="closeAllMenus">
+    Deutsche Security Limited
+  </RouterLink>
+
+  <RouterLink to="/about#mission" class="block font-medium hover:text-green-700"
+  @click="closeAllMenus">
+    Deutsche Trustees Limited
+  </RouterLink>
+</div>
+
+
+
+
+
+</div>
+
+
+      <!-- RIGHT -->
+      <div class="bg-gray-50 rounded-xl p-4 flex flex-col justify-between">
+        <img
+          src="/navigation1.png"
+          alt="Our Businesses"
+          class="rounded-lg mb-4"
+        />
+
+        <p class="font-medium text-lg">
+          Explore our<br />
+          <span class="font-semibold">Business divisions</span>
+        </p>
+
+        <RouterLink
+          to="/contact"
+          class="mt-4 text-center border border-black rounded-lg py-2"
+        >
+          Contact Us
+        </RouterLink>
+      </div>
+
+
+      
+
+
+    </div>
+  </div>
+</li>
+
+
+
+
+
+<li
+  class="relative
          after:content-['']
          after:absolute after:left-0 after:-bottom-1
          after:h-0.5 after:w-0
          after:bg-green-700
          after:transition-all after:duration-300
-         hover:after:w-full">
-
-  <RouterLink to="/about" class="hidden md:inline-block ml-2"> About Us   </RouterLink>
-
-  <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-170 bg-white shadow-lg rounded-lg
-              opacity-0 invisible
-              group-hover:opacity-100 group-hover:visible
-              transition-all duration-300 z-50">
-
-  <div class="grid grid-cols-2 gap-4 p-4 min-w-[420px]">
-  
-  <!-- LEFT: LINKS -->
-  <div class="space-y-2">
-
-       <RouterLink to="/about" class="block px-4 py-3 hover:bg-green-50"> Who we are </RouterLink>
-   <RouterLink to="/MDmessage" class="block px-4 py-3 hover:bg-green-50">MD’s Message</RouterLink>
-    <RouterLink to="/Leadership" class="block px-4 py-3 hover:bg-green-50"> Leadership </RouterLink> 
-  </div>
-
-  <!-- RIGHT: IMAGE -->
-  <div class="hidden md:block">
-    <img
-      src="/navigation3.png"
-      alt="Our Businesses"
-      class="w-full h-full object-cover rounded-lg"
-    />
-  </div>
-
-</div>
-      
-  </div>
-
-</li>
-
-
-<li
-  class="relative"
-  @mouseenter="openMega"
+         hover:after:w-full"
+  @mouseenter="openMega('services')"
   @mouseleave="closeMega"
 >
-  <!-- TRIGGER -->
-  <span
-    class="cursor-pointer relative
-           after:content-['']
-           after:absolute after:left-0 after:-bottom-1
-           after:h-0.5 after:w-0
-           after:bg-green-700
-           after:transition-all after:duration-300
-           hover:after:w-full"
-  >
-    Our Businesses
+  <span class="cursor-pointer relative hover:after:w-full">
+    Our Services
   </span>
 
-  <!-- MEGA MENU -->
   <div
-    v-show="megaOpen"
+    v-show="activeMega === 'services'"
     class="absolute left-1/2 top-full mt-6 -translate-x-1/2
            w-[1100px] bg-white rounded-2xl shadow-xl
            p-6 z-50"
@@ -136,32 +343,42 @@ const closeMega = () => {
       <!-- LEFT -->
       <div class="border-r pr-4">
         <p class="text-xs tracking-widest text-gray-400 mb-4">
-          OUR BUSINESSES
+          OUR SERVICES
         </p>
 
         <ul class="space-y-2">
           <RouterLink to="/Asset-Management"
-            class="block px-4 py-3 rounded-lg bg-gray-100 font-medium">
+            class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
+              @mouseenter="activeServicesSub = 'asset'"
+              @click="closeAllMenus">
             Asset Management
           </RouterLink>
 
           <RouterLink to="/Investment-Banking"
-            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            class="block px-4 py-3 rounded-lg hover:bg-green-100"
+            @mouseenter = "activeServicesSub = 'investment'"
+            @click="closeAllMenus">
             Investment Banking
           </RouterLink>
 
           <RouterLink to="/Private-Equity"
-            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            class="block px-4 py-3 rounded-lg hover:bg-green-100"
+            @mouseenter = "activeServicesSub = 'private'"
+            @click="closeAllMenus">
             Private Equity
           </RouterLink>
 
           <RouterLink to="/Securities-Trading"
-            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            class="block px-4 py-3 rounded-lg hover:bg-green-100" 
+            @mouseenter = "activeServicesSub = 'securities'"
+            @click="closeAllMenus">
             Securities Trading
           </RouterLink>
 
           <RouterLink to="/Trustees"
-            class="block px-4 py-3 rounded-lg hover:bg-gray-50">
+            class="block px-4 py-3 rounded-lg hover:bg-green-100"
+            @mouseenter = "activeServicesSub = 'trustees'"
+            @click="closeAllMenus">
             Trustees
           </RouterLink>
         </ul>
@@ -173,43 +390,298 @@ const closeMega = () => {
           WHAT WE DO
         </p>
 
-        <div class="space-y-4">
+         <div v-if="activeServicesSub === 'asset'" class="space-y-8">
           <div>
-            <p class="font-medium">Asset Management</p>
+            <p class="font-medium">Private Wealth Management</p>
             <p class="text-sm text-gray-500">
-              Portfolio and fund management solutions
+            
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Investment Banking</p>
+            <p class="font-medium">Fund Management and Advisory</p>
             <p class="text-sm text-gray-500">
-              Advisory and capital raising services
+         
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Private Equity</p>
+            <p class="font-medium">Collective Investment Scheme</p>
             <p class="text-sm text-gray-500">
-              Long-term strategic investments
+            
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Securities Trading</p>
+            <p class="font-medium">Special Investment Scheme</p>
             <p class="text-sm text-gray-500">
-              Execution and market access
             </p>
           </div>
 
           <div>
-            <p class="font-medium">Trustees</p>
+            <p class="font-medium">Portofolio Management</p>
             <p class="text-sm text-gray-500">
-              Independent fiduciary services
+              
             </p>
           </div>
         </div>
+
+
+
+
+ <div v-if="activeServicesSub === 'investment'" class="space-y-8">
+          <div>
+            <p class="font-medium">Corporate Finance</p>
+            <p class="text-sm text-gray-500">
+             
+            </p>
+             <p class="text-sm text-gray-500">
+             
+            </p>
+
+             <p class="text-sm text-gray-500">
+             
+            </p>
+
+             <p class="text-sm text-gray-500">
+            
+            </p>
+
+            <p class="text-sm text-gray-500">
+           
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Public Sector Advisory</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+
+               <p class="text-sm text-gray-500">
+           
+            </p>
+
+
+               <p class="text-sm text-gray-500">
+              
+            </p>
+
+
+               <p class="text-sm text-gray-500">
+              
+            </p>
+
+
+               <p class="text-sm text-gray-500">
+            
+            </p>
+
+                 <p class="text-sm text-gray-500">
+           
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Structured Finance</p>
+
+            <p class="text-sm text-gray-500">
+           
+            </p>
+
+             <p class="text-sm text-gray-500">
+         
+            </p>
+
+             <p class="text-sm text-gray-500">
+         
+            </p>
+
+             <p class="text-sm text-gray-500">
+          
+            </p>
+
+              <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Research & Intelligence</p>
+            <p class="text-sm text-gray-500">
+             
+            </p>
+
+             <p class="text-sm text-gray-500">
+              
+            </p>
+
+             <p class="text-sm text-gray-500">
+            
+            </p>
+
+             <p class="text-sm text-gray-500">
+             
+            </p>
+          </div>
+
+          
+        </div>
+
+
+
+
+        <div v-if="activeServicesSub === 'private'" class="space-y-8">
+          <div>
+            <p class="font-medium">Private Equity Funds</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Business Incubation Investment</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Health Investment</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Hospitality & Entertainment Investment</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Real Estate Investment Trust</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+          </div>
+        </div>
+
+
+
+        <div v-if="activeServicesSub === 'securities'" class="space-y-8">
+          <div>
+            <p class="font-medium">Equity Trading</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Fixed Income Trading</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Propriety Trading</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Security Analysis</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Economic Profiling</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+          </div>
+        </div>
+
+
+        <div v-if="activeServicesSub === 'trustees'" class="space-y-8">
+          <div>
+            <p class="font-medium">Secured and unsecured note issuances</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Securitization and structured financings</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">EMTN Programmes</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">Retail bonds</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium">High Yield and emerging markets bonds</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+          </div>
+
+           <div>
+            <p class="font-medium">Convertible and Equity linked bonds</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+        </div>
+
+
       </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <!-- RIGHT -->
       <div class="bg-gray-50 rounded-xl p-4 flex flex-col justify-between">
@@ -237,25 +709,38 @@ const closeMega = () => {
 </li>
 
 
-
-<li class="relative inline-block group
+<li
+  class="relative
          after:content-['']
          after:absolute after:left-0 after:-bottom-1
          after:h-0.5 after:w-0
          after:bg-green-700
          after:transition-all after:duration-300
-         hover:after:w-full font-">
+         hover:after:w-full"
+  @mouseenter="openMega('resources')"
+  @mouseleave="closeMega"
+>
+
         
 
-         <RouterLink to="/Insight" class="cursor-pointer"> Resources </RouterLink>
+          <span class="cursor-pointer relative hover:after:w-full">
+   Resources
+  </span>
+
+
+
+
+
 
   <!-- Dropdown -->
-  <div class="absolute left-0 mt-2 w-150 bg-white shadow-lg rounded-lg
-              opacity-0 invisible
-              group-hover:opacity-100 group-hover:visible
-              transition-all duration-300 z-50">
+  <div
+    v-show="activeMega === 'resources'"
+    class="absolute left-1/2 top-full mt-6 -translate-x-1/2
+           w-[1100px] bg-white rounded-2xl shadow-xl
+           p-6 z-50"
+  >
+   <div class="grid grid-cols-[1fr_320px] gap-6">
 
-     <div class="grid grid-cols-2 gap-4 p-4 min-w-[420px]">
   
   <!-- LEFT: LINKS -->
   <div class="space-y-2">
@@ -277,19 +762,7 @@ const closeMega = () => {
   </div>
 
 </div>
-    <!-- <div class="absolute left-0 mt-2 w-100 bg-white shadow-lg rounded-lg
-              opacity-0 invisible
-              group-hover:opacity-100 group-hover:visible
-              transition-all duration-300 z-50">
-    <a href="#" class="block px-4 py-3 hover:bg-green-50">Policy
 
- <a href="#" class="block px-4 py-3 hover:bg-green-50">Cookies Policy</a>
-  <a href="#" class="block px-4 py-3 hover:bg-green-50">Private Policy</a>
-   <a href="#" class="block px-4 py-3 hover:bg-green-50">Terms and Conditions</a>
-    </a>
-   </div>
-
-</div> -->
 
 </div>
          
