@@ -200,7 +200,7 @@ const currentSlide = computed<SlideType>(() => {
 
     <!-- LEFT TEXT -->
     <div class="text-white z-20">
-      <h2 class="font-semibold text-4xl md:text-6xl leading-tight mb-6 md:mt-0 mt-50">
+      <h2 class="font-semibold text-4xl md:text-6xl leading-tight mb-6 md:mt-0 mt-120">
         Creating Wealth <br />
         For The <span class="text-green-400">Future</span> 
       </h2>
