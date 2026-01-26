@@ -6,7 +6,7 @@ import assetmanagement from '@/assets/assetmanagement.png'
 import Privateequity from '@/assets/Privateequity.jpg'
 import securitieshomepage from '@/assets/securitieshomepage.png'
 import Trusteesimg from '@/assets/Trusteesimg.jpg'
-import HeroImage from '@/assets/HeroImage.png'
+import HeroImage from "@/assets/HeroImage.png"
 import secondsliderImage from '@/assets/secondsliderImage.png'
 import thirdsliderImage from '@/assets/thirdsliderImage.png'
 import fourthsliderImage from '@/assets/fourthsliderImage.png'
@@ -173,11 +173,11 @@ const currentSlide = computed<SlideType>(() => {
   <!-- SLIDES -->
   <div class="absolute inset-0">
 
-   <transition name="fade-slide" mode="out-in">
-  <div
-    :key="activeSlide"
-    class="absolute inset-0"
-  >
+   <transition name="fade-slide">
+<div
+  :key="activeSlide"
+  class="absolute inset-0 will-change-transform"
+>
     <!-- VIDEO SLIDE -->
     <video
       v-if="currentSlide.type === 'video'"
@@ -200,7 +200,7 @@ const currentSlide = computed<SlideType>(() => {
 
     <!-- LEFT TEXT -->
     <div class="text-white z-20">
-      <h2 class="font-semibold text-4xl md:text-6xl leading-tight mb-6">
+      <h2 class="font-semibold text-4xl md:text-6xl leading-tight mb-6 md:mt-0 mt-50">
         Creating Wealth <br />
         For The <span class="text-green-400">Future</span> 
       </h2>
@@ -408,6 +408,27 @@ const currentSlide = computed<SlideType>(() => {
             Trustees
           </span>
         </RouterLink>
+
+<RouterLink
+          to="/Trustees"
+         :class="cardClass"
+       class="reveal"> 
+          <div class="relative h-full w-24 sm:w-28 md:w-32 -mr-6 sm:-mr-8">
+            <img
+              :src="Trusteesimg"
+              class="w-24 sm:w-28 md:w-32 h-full object-cover -mr-6 sm:-mr-8"
+            />
+            <!-- Overlay only on image -->
+            <div class="absolute inset-0 bg-black/30 rounded-l-2xl"></div>
+          </div>
+
+          <span
+            class="relative z-10 flex items-center justify-center h-full text-gray-700 text-sm sm:text-base font-semibold px-10"
+          >
+            Venture Capital
+          </span>
+        </RouterLink>
+
       </div>
     </div>
 
@@ -447,7 +468,7 @@ const currentSlide = computed<SlideType>(() => {
 /* IMAGE FADE + ZOOM */
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-  transition: opacity 0.8s ease, transform 1s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .fade-slide-enter-from {
