@@ -127,7 +127,7 @@ const closeAllMenus = () => {
   @mouseleave="activeAboutSub = null"
   class="absolute left-11/12 top-full mt-6 -translate-x-1/2
          w-[1100px] bg-white rounded-2xl shadow-xl
-         p-6 z-50"
+         p-6 z-50 ml-30"
 >
 
     <div class="grid grid-cols-[240px_1fr_320px] gap-6">
@@ -748,6 +748,8 @@ const closeAllMenus = () => {
     <RouterLink to="/gallery" class="block px-4 py-3 hover:bg-green-50">Gallery</RouterLink> 
     <RouterLink to="/gallery" class="block px-4 py-3 hover:bg-green-50">Career</RouterLink> 
     <RouterLink to="/gallery" class="block px-4 py-3 hover:bg-green-50">Policy</RouterLink> 
+      <RouterLink to="/investmentdashboard" class="block px-4 py-3 hover:bg-green-50">Investment Dashboard</RouterLink> 
+
 
     
   </div>

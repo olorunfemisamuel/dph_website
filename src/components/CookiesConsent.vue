@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 type CookiePrefs = {
   essential: boolean
@@ -10,18 +10,35 @@ type CookiePrefs = {
 const showBanner = ref(false)
 
 const prefs = ref<CookiePrefs>({
-  essential: true, // always true
+  essential: true,
   analytics: false,
   marketing: false,
 })
 
+const tryShowCookies = () => {
+  const cookieSaved = localStorage.getItem('cookiePrefs')
+  const privacyAccepted = localStorage.getItem('privacyAccepted')
+
+  if (!cookieSaved && privacyAccepted) {
+    setTimeout(() => {
+      showBanner.value = true
+    }, 2000)
+  }
+}
+
 onMounted(() => {
   const saved = localStorage.getItem('cookiePrefs')
-  if (saved) {
-    prefs.value = JSON.parse(saved)
-  } else {
-    showBanner.value = true
-  }
+  if (saved) prefs.value = JSON.parse(saved)
+
+  // Initial attempt
+  tryShowCookies()
+
+  // Listen when privacy modal saves
+  window.addEventListener('storage', tryShowCookies)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('storage', tryShowCookies)
 })
 
 const acceptAll = () => {
@@ -46,9 +63,9 @@ const savePrefs = () => {
   localStorage.setItem('cookiePrefs', JSON.stringify(prefs.value))
   showBanner.value = false
 }
-
-localStorage.removeItem('cookiePrefs')
 </script>
+
+
 
 <template>
   <Teleport to="body">

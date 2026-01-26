@@ -11,6 +11,7 @@ import SecuritiesPage from '@/views/SecuritiesPage.vue'
 import TrusteesPage from '@/views/TrusteesPage.vue'
 import ContactPage from '@/views/ContactPage.vue'
 import CareerPage from '@/views/CareerPage.vue'
+import InvestmentDashboardPage from '@/views/InvestmentDashboardPage.vue'
 
 import Insightpage from '@/views/Insightpage.vue'
 import InsightsExtendPage from '@/views/InsightsExtendPage.vue'
@@ -106,6 +107,12 @@ const router = createRouter({
   name: '/gallery',
   path : '/gallery',
   component: GalleryPage
+},
+
+{
+  name: '/investmentdashboard',
+  path: '/investmentdashboard',
+  component: InvestmentDashboardPage
 }
 
   ],

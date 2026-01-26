@@ -5,18 +5,29 @@ const showModal = ref(false)
 const dontShowAgain = ref(false)
 
 onMounted(() => {
-  const accepted = localStorage.getItem('privacyAccepted')
-  if (!accepted) {
+  const dontShow = localStorage.getItem('privacyDontShow')
+  if (!dontShow) {
     showModal.value = true
   }
 })
 
+
 const acceptPolicy = () => {
+  // Always mark privacy accepted
+  localStorage.setItem('privacyAccepted', 'true')
+
+  // Optional: only matters if you later use dontShowAgain
   if (dontShowAgain.value) {
-    localStorage.setItem('privacyAccepted', 'true')
+    localStorage.setItem('privacyDontShow', 'true')
   }
+
+  // Notify cookie component
+  window.dispatchEvent(new Event('storage'))
+
   showModal.value = false
 }
+
+
 </script>
 
 <template>
