@@ -177,7 +177,7 @@ const closeAllMenus = () => {
             Leadership
           </RouterLink>
 
-            <RouterLink to="/Private-Equity"
+            <RouterLink to="/"
             class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
             @mouseenter="activeAboutSub ='sub'"
             @click="closeAllMenus"
@@ -367,21 +367,21 @@ const closeAllMenus = () => {
            Investment Banking
           </RouterLink>
 
-          <RouterLink to="/Investment-Banking"
+          <RouterLink to="/"
             class="block px-4 py-3 rounded-lg hover:bg-green-100"
             @mouseenter = "activeServicesSub = 'asset'"
             @click="closeAllMenus">
         Asset Management
           </RouterLink>
 
-          <RouterLink to="/Private-Equity"
+          <RouterLink to="/"
             class="block px-4 py-3 rounded-lg hover:bg-green-100"
             @mouseenter = "activeServicesSub = 'private'"
             @click="closeAllMenus">
             Private Equity
           </RouterLink>
 
-          <RouterLink to="/Securities-Trading"
+          <RouterLink to="/"
             class="block px-4 py-3 rounded-lg hover:bg-green-100" 
             @mouseenter = "activeServicesSub = 'securities'"
             @click="closeAllMenus">
@@ -412,17 +412,21 @@ const closeAllMenus = () => {
           </div>
 
           <div>
+            <RouterLink to="/Asset-Management">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Fund Management and Advisory</p>
             <p class="text-sm text-gray-500">
          
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Asset-Management">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Collective Investment Scheme</p>
             <p class="text-sm text-gray-500">
             
             </p>
+            </RouterLink>
           </div>
 
           <div>
@@ -432,10 +436,12 @@ const closeAllMenus = () => {
           </div>
 
           <div>
+            <RouterLink to = "/Asset-Management">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Portofolio Management</p>
             <p class="text-sm text-gray-500">
               
             </p>
+          </RouterLink>
           </div>
         </div>
 
@@ -537,37 +543,47 @@ const closeAllMenus = () => {
 
         <div v-if="activeServicesSub === 'securities'" class="space-y-8">
           <div>
+            <RouterLink to = "/Securities-Trading">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Equity Trading</p>
             <p class="text-sm text-gray-500">
             
             </p>
+          </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Securities-Trading">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Fixed Income Trading</p>
             <p class="text-sm text-gray-500">
          
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Securities-Trading">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Propriety Trading</p>
             <p class="text-sm text-gray-500">
             
             </p>
+          </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Securities-Trading">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Security Analysis</p>
             <p class="text-sm text-gray-500">
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Securities-Trading">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Economic Profiling</p>
             <p class="text-sm text-gray-500">
               
             </p>
+            </RouterLink>
           </div>
         </div>
 
