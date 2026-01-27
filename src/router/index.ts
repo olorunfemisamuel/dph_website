@@ -12,6 +12,9 @@ import TrusteesPage from '@/views/TrusteesPage.vue'
 import ContactPage from '@/views/ContactPage.vue'
 import CareerPage from '@/views/CareerPage.vue'
 import InvestmentDashboardPage from '@/views/InvestmentDashboardPage.vue'
+import ExchangeTradedFunds from '@/views/ExchangeTradedFunds.vue'
+import MutualFunds from '@/views/MutualFunds.vue'
+import AlternativeInvestment from '@/views/AlternativeInvestment.vue'
 
 import Insightpage from '@/views/Insightpage.vue'
 import InsightsExtendPage from '@/views/InsightsExtendPage.vue'
@@ -113,6 +116,24 @@ const router = createRouter({
   name: '/investmentdashboard',
   path: '/investmentdashboard',
   component: InvestmentDashboardPage
+},
+
+{
+  name: '/Exchange-Traded-Funds',
+  path: '/Exchange-Traded-Funds',
+  component: ExchangeTradedFunds
+},
+
+{
+  name: '/mutual-funds',
+  path: '/mutual-funds',
+  component: MutualFunds
+},
+
+{
+  name: '/alternative-investment',
+  path:'/alternative-investment',
+  component: AlternativeInvestment
 }
 
   ],

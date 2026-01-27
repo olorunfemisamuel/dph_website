@@ -37,7 +37,7 @@
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-300 hover:text-white transition"></a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Mutual Funds</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition">Exhange Traded Funds</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Exchange Traded Funds</a></li>
                         <li><a href="#" class="text-gray-300 hover:text-white transition">Alternative Investment Scheme</a></li>
                         <!-- <li><a href="#" class="text-gray-300 hover:text-white transition">Trustees</a></li> -->
                     </ul>

@@ -25,7 +25,7 @@ const toggleMenu = () => {
 
 
 
-type MegaMenu = 'about' | 'services' | 'resources' | null
+type MegaMenu = 'about' | 'services' | 'resources' | 'products' | null
 
 const activeMega = ref<MegaMenu>(null)
 
@@ -41,6 +41,15 @@ const activeMega = ref<MegaMenu>(null)
 
 const activeServicesSub = ref<ServicesSub>('asset')
 
+//ProductsSub
+type ProductsSub = 
+  | 'mutual'
+  | 'exchange-traded'
+  | 'alternative'
+  | null
+
+
+const activeProductsSub = ref<ProductsSub>('mutual')
 
 
 let closeTimer: number | null = null
@@ -60,6 +69,10 @@ const openMega = (menu: MegaMenu) => {
 
   if (menu === 'services') {
     activeServicesSub.value = 'asset'
+  }
+
+  if (menu === 'products') {
+    activeProductsSub.value = 'mutual'
   }
 }
 
@@ -127,7 +140,7 @@ const closeAllMenus = () => {
   @mouseleave="activeAboutSub = null"
   class="absolute left-11/12 top-full mt-6 -translate-x-1/2
          w-[1100px] bg-white rounded-2xl shadow-xl
-         p-6 z-50 ml-30"
+         p-6 z-50 ml-60"
 >
 
     <div class="grid grid-cols-[240px_1fr_320px] gap-6">
@@ -336,7 +349,7 @@ const closeAllMenus = () => {
     v-show="activeMega === 'services'"
     class="absolute left-1/2 top-full mt-6 -translate-x-1/2
            w-[1100px] bg-white rounded-2xl shadow-xl
-           p-6 z-50"
+           p-6 z-50 ml-37"
   >
     <div class="grid grid-cols-[240px_1fr_320px] gap-6">
 
@@ -347,18 +360,18 @@ const closeAllMenus = () => {
         </p>
 
         <ul class="space-y-2">
-          <RouterLink to="/Asset-Management"
+          <RouterLink to="/"
             class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
-              @mouseenter="activeServicesSub = 'asset'"
+              @mouseenter="activeServicesSub = 'investment'"
               @click="closeAllMenus">
-            Asset Management
+           Investment Banking
           </RouterLink>
 
           <RouterLink to="/Investment-Banking"
             class="block px-4 py-3 rounded-lg hover:bg-green-100"
-            @mouseenter = "activeServicesSub = 'investment'"
+            @mouseenter = "activeServicesSub = 'asset'"
             @click="closeAllMenus">
-            Investment Banking
+        Asset Management
           </RouterLink>
 
           <RouterLink to="/Private-Equity"
@@ -392,7 +405,7 @@ const closeAllMenus = () => {
 
          <div v-if="activeServicesSub === 'asset'" class="space-y-8">
           <div>
-            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Private Wealth Management</p>
+           <RouterLink to="/Asset-Management"> <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Private Wealth Management</p></RouterLink>
             <p class="text-sm text-gray-500">
             
             </p>
@@ -431,25 +444,12 @@ const closeAllMenus = () => {
 
  <div v-if="activeServicesSub === 'investment'" class="space-y-8">
           <div>
+            <RouterLink to ="/Investment-Banking">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Corporate Finance</p>
             <p class="text-sm text-gray-500">
              
             </p>
-             <p class="text-sm text-gray-500">
-             
-            </p>
-
-             <p class="text-sm text-gray-500">
-             
-            </p>
-
-             <p class="text-sm text-gray-500">
-            
-            </p>
-
-            <p class="text-sm text-gray-500">
-           
-            </p>
+         </RouterLink>
           </div>
 
           <div>
@@ -709,6 +709,357 @@ const closeAllMenus = () => {
 </li>
 
 
+
+
+
+<!---Products NavBar-->
+<li
+  class="relative
+         after:content-['']
+         after:absolute after:left-0 after:-bottom-1
+         after:h-0.5 after:w-0
+         after:bg-green-700
+         after:transition-all after:duration-300
+         hover:after:w-full"
+  @mouseenter="openMega('products')"
+  @mouseleave="closeMega"
+>
+  <span class="cursor-pointer relative hover:after:w-full">
+    Our Products
+  </span>
+
+  <div
+    v-show="activeMega === 'products'"
+    class="absolute left-1/2 top-full mt-6 -translate-x-1/2
+           w-[1100px] bg-white rounded-2xl shadow-xl
+           p-6 z-50"
+  >
+    <div class="grid grid-cols-[240px_1fr_320px] gap-6">
+
+      <!-- LEFT -->
+      <div class="border-r pr-4">
+        <p class="text-xs tracking-widest text-gray-400 mb-4">
+          OUR PRODUCTS
+        </p>
+
+        <ul class="space-y-2">
+          <RouterLink to="/"
+            class="block px-4 py-3 rounded-lg hover:bg-green-100 font-medium"
+              @mouseenter="activeProductsSub = 'mutual'"
+              @click="closeAllMenus">
+            Mutual Funds
+          </RouterLink>
+
+          <RouterLink to="/"
+            class="block px-4 py-3 rounded-lg hover:bg-green-100"
+            @mouseenter = "activeProductsSub = 'exchange-traded'"
+            @click="closeAllMenus">
+           Exchange Traded Funds
+          </RouterLink>
+
+          <RouterLink to="/"
+            class="block px-4 py-3 rounded-lg hover:bg-green-100"
+            @mouseenter = "activeProductsSub = 'alternative'"
+            @click="closeAllMenus">
+           Alternative Investments Scheme
+          </RouterLink>
+
+          
+        </ul>
+      </div>
+
+      <!-- MIDDLE -->
+      <div>
+        <p class="text-xs tracking-widest text-gray-400 mb-4">
+          WHAT WE DO
+        </p>
+
+         <div v-if="activeProductsSub === 'mutual'" class="space-y-8">
+          <div>
+           <RouterLink to="/mutual-funds"> <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Money Market Fund</p></RouterLink>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <RouterLink to="/mutual-funds">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Equity Fund</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+          </RouterLink>
+          </div>
+
+          <div>
+            <RouterLink to="/mutual-funds">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Private Fixed Income Fund</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+            </RouterLink> 
+          </div>
+
+          <div>
+            <RouterLink to="/mutual-funds">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Ethical Funds</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </RouterLink>
+          </div>
+
+          <!-- <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Portofolio Management</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+          </div> -->
+        </div>
+
+
+
+
+ <div v-if="activeProductsSub === 'exchange-traded'" class="space-y-8">
+          <div>
+            <RouterLink to="/exchange-traded-funds">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Agro-ETF</p>
+            <p class="text-sm text-gray-500">
+             
+     </p>
+    </RouterLink>
+          </div>
+
+          <div>
+            <RouterLink to="/exchange-traded-funds">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Gold-ETF</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+
+            </RouterLink>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100"></p>
+
+            <p class="text-sm text-gray-500">
+           
+            </p>
+
+             <p class="text-sm text-gray-500">
+         
+            </p>
+
+             <p class="text-sm text-gray-500">
+         
+            </p>
+
+             <p class="text-sm text-gray-500">
+          
+            </p>
+
+              <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100"></p>
+            <p class="text-sm text-gray-500">
+             
+            </p>
+
+             <p class="text-sm text-gray-500">
+              
+            </p>
+
+             <p class="text-sm text-gray-500">
+            
+            </p>
+
+             <p class="text-sm text-gray-500">
+             
+            </p>
+          </div>
+
+          
+        </div>
+
+
+
+
+        <div v-if="activeProductsSub === 'alternative'" class="space-y-8">
+          <div>
+            <RouterLink to="/alternative-investment">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Private Wealth Management:</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+            </RouterLink>
+          </div>
+
+          <div>
+            <RouterLink to="/alternative-investment">
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Deutsche Institutional Asset Management</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+            </RouterLink>
+          </div>
+
+       
+
+          
+
+          
+        </div>
+
+
+
+        <div v-if="activeServicesSub === 'securities'" class="space-y-8">
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Equity Trading</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Fixed Income Trading</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Propriety Trading</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Security Analysis</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Economic Profiling</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+          </div>
+        </div>
+
+
+        <div v-if="activeServicesSub === 'trustees'" class="space-y-5">
+          <div>
+            <p class="cursor-pointer px-1 py-3 rounded-lg hover:bg-green-100 font-medium">Secured and unsecured note issuances</p>
+            <p class="text-sm text-gray-500 ">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer px-1 py-3 rounded-lg hover:bg-green-100">Securitization and structured financings</p>
+            <p class="text-sm text-gray-500">
+         
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">EMTN Programmes</p>
+            <p class="text-sm text-gray-500">
+            
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Retail bonds</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+
+          <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">High Yield and emerging markets bonds</p>
+            <p class="text-sm text-gray-500">
+              
+            </p>
+          </div>
+
+           <div>
+            <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Convertible and Equity linked bonds</p>
+            <p class="text-sm text-gray-500">
+            </p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- RIGHT -->
+      <div class="bg-gray-50 rounded-xl p-4 flex flex-col justify-between">
+        <img
+          src="/navigation1.png"
+          alt="Our Businesses"
+          class="rounded-lg mb-4"
+        />
+
+        <p class="font-medium text-lg">
+          Explore our<br />
+          <span class="font-semibold">business divisions</span>
+        </p>
+
+        <RouterLink
+          to="/contact"
+          class="mt-4 text-center border border-black rounded-lg py-2"
+        >
+          Contact Us
+        </RouterLink>
+      </div>
+
+    </div>
+  </div>
+</li>
+
+
+
+
+
+
 <li
   class="relative
          after:content-['']
@@ -726,6 +1077,15 @@ const closeAllMenus = () => {
           <span class="cursor-pointer relative hover:after:w-full">
    Resources
   </span>
+
+
+
+
+
+
+
+
+
 
 
 
