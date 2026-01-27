@@ -590,43 +590,55 @@ const closeAllMenus = () => {
 
         <div v-if="activeServicesSub === 'trustees'" class="space-y-5">
           <div>
+            <RouterLink to = "/Trustees">
             <p class="cursor-pointer px-1 py-3 rounded-lg hover:bg-green-100 font-medium">Secured and unsecured note issuances</p>
             <p class="text-sm text-gray-500 ">
             
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Trustees">
             <p class="font-medium cursor-pointer px-1 py-3 rounded-lg hover:bg-green-100">Securitization and structured financings</p>
             <p class="text-sm text-gray-500">
          
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Trustees">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">EMTN Programmes</p>
             <p class="text-sm text-gray-500">
             
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Trustees">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Retail bonds</p>
             <p class="text-sm text-gray-500">
             </p>
+            </RouterLink> 
           </div>
 
           <div>
+            <RouterLink to = "/Trustees">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">High Yield and emerging markets bonds</p>
             <p class="text-sm text-gray-500">
               
             </p>
+          </RouterLink>
           </div>
 
            <div>
+            <RouterLink to = "/Trustees">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Convertible and Equity linked bonds</p>
             <p class="text-sm text-gray-500">
             </p>
+          </RouterLink>
           </div>
         </div>
 
@@ -1079,7 +1091,7 @@ const closeAllMenus = () => {
     v-show="activeMega === 'resources'"
     class="absolute left-1/2 top-full mt-6 -translate-x-1/2
            w-[1100px] bg-white rounded-2xl shadow-xl
-           p-6 z-50"
+           p-6 z-50 mr-37"
   >
    <div class="grid grid-cols-[1fr_320px] gap-6">
 

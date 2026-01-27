@@ -219,7 +219,8 @@ const currentSlide = computed<SlideType>(() => {
     </div>
 
     <!-- RIGHT IMAGE -->
-   <div class="flex justify-center md:justify-end mt-8 md:mt-0">
+   <div class="flex justify-center md:justify-end mt-8 md:mt-0 ml-50
+">
   <img
     :src="currentSlide.src"
     class="w-full max-w-[300px] md:max-w-none md:max-h-[500px] object-contain"

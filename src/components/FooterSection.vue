@@ -79,7 +79,7 @@
 
     <!-- Facebook -->
     <a
-      href="https://www.facebook.com/"
+      href="https://www.facebook.com/deutschepartners.deutschepartners"
       target="_blank"
       aria-label="Facebook"
       class="text-gray-400 hover:text-green-400 transition"
@@ -91,7 +91,7 @@
 
     <!-- Twitter / X -->
     <a
-      href="https://www.instagram.com/deutschepartners?igsh=MWxhMWd1aTdheDBpdg=="
+      href="https://x.com/home"
       target="_blank"
       aria-label="Twitter"
       class="text-gray-400 hover:text-green-400 transition"
