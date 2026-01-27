@@ -453,76 +453,32 @@ const closeAllMenus = () => {
           </div>
 
           <div>
+             <RouterLink to ="/Investment-Banking">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Public Sector Advisory</p>
             <p class="text-sm text-gray-500">
-              
-            </p>
-
-               <p class="text-sm text-gray-500">
-           
-            </p>
-
-
-               <p class="text-sm text-gray-500">
-              
-            </p>
-
-
-               <p class="text-sm text-gray-500">
-              
-            </p>
-
-
-               <p class="text-sm text-gray-500">
-            
-            </p>
-
-                 <p class="text-sm text-gray-500">
-           
-            </p>
+              </p>
+               </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Investment-Banking">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Structured Finance</p>
 
             <p class="text-sm text-gray-500">
            
             </p>
-
-             <p class="text-sm text-gray-500">
-         
-            </p>
-
-             <p class="text-sm text-gray-500">
-         
-            </p>
-
-             <p class="text-sm text-gray-500">
-          
-            </p>
-
-              <p class="text-sm text-gray-500">
-         
-            </p>
+            </RouterLink>
+            
           </div>
 
           <div>
+            <RouterLink to = "/Investment-Banking">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Research & Intelligence</p>
             <p class="text-sm text-gray-500">
              
             </p>
-
-             <p class="text-sm text-gray-500">
-              
-            </p>
-
-             <p class="text-sm text-gray-500">
+            </RouterLink>
             
-            </p>
-
-             <p class="text-sm text-gray-500">
-             
-            </p>
           </div>
 
           
@@ -533,37 +489,47 @@ const closeAllMenus = () => {
 
         <div v-if="activeServicesSub === 'private'" class="space-y-8">
           <div>
+            <RouterLink to = "/Private-Equity">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Private Equity Funds</p>
             <p class="text-sm text-gray-500">
             
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to = "/Private-Equity">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Business Incubation Investment</p>
             <p class="text-sm text-gray-500">
          
             </p>
+            </RouterLink>
           </div>
 
           <div>
+            <RouterLink to ="/Private-Equity">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Health Investment</p>
             <p class="text-sm text-gray-500">
             
             </p>
+          </RouterLink>
           </div>
 
           <div>
+             <RouterLink to ="/Private-Equity">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Hospitality & Entertainment Investment</p>
             <p class="text-sm text-gray-500">
             </p>
+            </RouterLink>
           </div>
 
           <div>
+             <RouterLink to ="/Private-Equity">
             <p class="font-medium cursor-pointer rounded-lg px-1 py-3 hover:bg-green-100">Real Estate Investment Trust</p>
             <p class="text-sm text-gray-500">
               
             </p>
+            </RouterLink>
           </div>
         </div>
 
