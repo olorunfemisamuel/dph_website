@@ -168,140 +168,131 @@ const currentSlide = computed<SlideType>(() => {
 
 <template>
   <main class="overflow-x-hidden">
-  <div class="relative w-full sm:h-screen min-h-[60vh] overflow-hidden">
-  <div class="relative w-full h-screen overflow-hidden">
+ <div class="relative w-full h-[80vh] md:h-screen overflow-hidden">
   <!-- SLIDES -->
   <div class="absolute inset-0">
-
-   <transition name="fade-slide">
-<div
-  :key="activeSlide"
-  class="absolute inset-0 will-change-transform"
->
-    <!-- VIDEO SLIDE -->
-    <video
-      v-if="currentSlide.type === 'video'"
-      autoplay
-      muted
-      loop
-      playsinline
-      class="w-full h-full object-cover"
-    >
-      <source :src="currentSlide.src" type="video/mp4" />
-    </video>
-
-    <!-- IMAGE SLIDE -->
-    <!-- FIRST SLIDE: CUSTOM BLACK SPLIT LAYOUT -->
-<div
-  v-if="activeSlide === 0"
-  class="w-full h-full bg-black flex items-center"
->
-  <div class=" mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-
-    <!-- LEFT TEXT -->
-    <div class="text-white z-20">
-      <h2 class="font-semibold text-4xl md:text-6xl leading-tight mb-6 md:mt-0 mt-120">
-        Creating Wealth <br />
-        For The <span class="text-green-400">Future</span> 
-      </h2>
-
-      <p class="text-gray-300 max-w-md mb-8">
-        {{ currentSlide.description }}
-      </p>
-
-      <RouterLink :to="currentSlide.link">
-        <button
-          class="border border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-black transition"
+    <transition name="fade-slide">
+      <div
+        :key="activeSlide"
+        class="absolute inset-0 will-change-transform"
+      >
+        <!-- VIDEO SLIDE -->
+        <video
+          v-if="currentSlide.type === 'video'"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-full h-full object-cover"
         >
-          {{ currentSlide.buttonText }}
-        </button>
-      </RouterLink>
-    </div>
+          <source :src="currentSlide.src" type="video/mp4" />
+        </video>
 
-    <!-- RIGHT IMAGE -->
-   <div class="flex justify-center md:justify-end mt-8 md:mt-0 ml-50
-">
-  <img
-    :src="currentSlide.src"
-    class="w-full max-w-[600px] md:max-w-none md:max-h-[500px] object-contain"
-    alt="Hero Image"
-  />
-</div>>
+        <!-- FIRST SLIDE: CUSTOM BLACK SPLIT LAYOUT -->
+        <div
+          v-if="activeSlide === 0"
+          class="w-full h-full bg-black flex items-center justify-center py-8 md:py-12"
+        >
+          <div class="max-w-screen-2xl w-full mx-auto px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
+            <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 md:gap-12 lg:gap-16 xl:gap-20">
+              
+              <!-- LEFT TEXT -->
+              <div class="text-white z-20 text-center lg:text-left order-2 lg:order-1">
+                <h2 class="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl leading-tight mb-4 md:mb-6">
+                  Creating Wealth <br />
+                  For The <span class="text-green-400">Future</span> 
+                </h2>
 
-  </div>
-</div>
+                <p class="text-gray-300 text-sm sm:text-base md:text-lg max-w-md mx-auto lg:mx-0 mb-6 md:mb-8">
+                  {{ currentSlide.description }}
+                </p>
 
-<!-- OTHER SLIDES: FULL BACKGROUND IMAGE -->
-<img
-  v-else
-  :src="currentSlide.src"
-  class="w-full h-full object-cover"
-/>
+                <RouterLink :to="currentSlide.link">
+                  <button
+                    class="border border-white text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md hover:bg-white hover:text-black transition text-sm sm:text-base"
+                  >
+                    {{ currentSlide.buttonText }}
+                  </button>
+                </RouterLink>
+              </div>
 
-  </div>
-</transition>
+              <!-- RIGHT IMAGE -->
+              <div class="flex justify-center lg:justify-end order-1 lg:order-2">
+                <img
+                  :src="currentSlide.src"
+                  class="w-full max-w-[280px] sm:max-w-[380px] md:max-w-[480px] lg:max-w-[520px] xl:max-w-[640px] 2xl:max-w-[720px] h-auto object-contain"
+                  alt="Hero Image"
+                />
+              </div>
 
+            </div>
+          </div>
+        </div>
 
+        <!-- OTHER SLIDES: FULL BACKGROUND IMAGE -->
+        <img
+          v-else
+          :src="currentSlide.src"
+          class="w-full h-full object-cover"
+          alt="Slide background"
+        />
+
+      </div>
+    </transition>
   </div>
 
   <!-- OVERLAY -->
   <div
-  class="absolute inset-0 z-10"
-  :class="activeSlide === 0 ? 'pointer-events-none' : 'bg-black/40'"
->
-<transition name="content-slide" mode="out-in">
-  <div
-    v-if="activeSlide !== 0"
-    :key="activeSlide"
-    class="absolute left-6 md:left-16 top-48 md:top-50 text-left max-w-none"
+    class="absolute inset-0 z-10"
+    :class="activeSlide === 0 ? 'pointer-events-none' : 'bg-black/40'"
   >
+    <transition name="content-slide" mode="out-in">
+      <div
+        v-if="activeSlide !== 0"
+        :key="activeSlide"
+        class="absolute left-4 right-4 sm:left-6 sm:right-auto md:left-12 lg:left-16 xl:left-20 top-1/2 -translate-y-1/2 md:top-auto md:translate-y-0 md:bottom-auto md:top-[45%] lg:top-[40%] text-left max-w-xl lg:max-w-2xl"
+      >
+        <h2 class="font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl leading-tight mb-4 md:mb-6 lg:mb-8 text-white">
+          <span class="block">
+            {{ currentSlide.title }}
+          </span>
+          <span v-if="currentSlide.subtitle" class="block">
+            {{ currentSlide.subtitle }}
+          </span>
+        </h2>
 
+        <div class="text-white text-xs sm:text-sm md:text-base lg:text-lg mb-4 md:mb-6 max-w-md lg:max-w-xl">
+          {{ currentSlide.description }}
+        </div>
 
-     <h2 class="font-semibold text-3xl md:text-6xl text-white mb-6 leading-tight">
-  <span class="block">
-    {{ currentSlide.title }}
-  </span>
-  <span v-if="currentSlide.subtitle" class="block">
-  {{ currentSlide.subtitle }}
-  </span>
-</h2>
-
-<div class="text-white text-sm mb-6 max-w-xl">
- {{ currentSlide.description }}
-</div>
-
-<RouterLink :to="currentSlide.link">
-<button
-  class="text-base px-8 py-3 rounded-md transition duration-300"
-  :class="isFirstSlide()
-    ? 'border border-white text-white hover:bg-white hover:text-black'
-    : 'bg-green-700 text-white hover:bg-green-800'"
->
-  {{ currentSlide.buttonText }}
-</button>
-</RouterLink>
-
-    </div>
+        <RouterLink :to="currentSlide.link">
+          <button
+            class="text-sm sm:text-base px-6 sm:px-8 py-2.5 sm:py-3 rounded-md transition duration-300"
+            :class="isFirstSlide()
+              ? 'border border-white text-white hover:bg-white hover:text-black'
+              : 'bg-green-700 text-white hover:bg-green-800'"
+          >
+            {{ currentSlide.buttonText }}
+          </button>
+        </RouterLink>
+      </div>
     </transition>
   </div>
 
   <!-- PAGINATION DOTS -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+  <div class="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2 sm:gap-3">
     <button
       v-for="(_, index) in slides"
       :key="index"
       @click="goToSlide(index)"
-      class="w-2.5 h-2.5 rounded-full transition-all"
+      class="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 rounded-full transition-all"
       :class="activeSlide === index
         ? 'bg-white scale-125'
         : 'bg-white/50 hover:bg-white'"
+      :aria-label="`Go to slide ${index + 1}`"
     />
   </div>
-
 </div>
-
-    </div>
-
     <!---What we do section-->
     <div class="bg-[#F0F5F7] py-1">
       <h2 class="reveal text-4xl font-bold  text-gray-500 mt-20 mb-10 ml-20">What We Do</h2>
