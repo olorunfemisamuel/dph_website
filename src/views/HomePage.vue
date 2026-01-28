@@ -196,7 +196,7 @@ const currentSlide = computed<SlideType>(() => {
   v-if="activeSlide === 0"
   class="w-full h-full bg-black flex items-center"
 >
-  <div class="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+  <div class=" mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
 
     <!-- LEFT TEXT -->
     <div class="text-white z-20">
