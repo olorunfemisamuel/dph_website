@@ -223,7 +223,7 @@ const currentSlide = computed<SlideType>(() => {
 ">
   <img
     :src="currentSlide.src"
-    class="w-full max-w-[300px] md:max-w-none md:max-h-[500px] object-contain"
+    class="w-full max-w-[600px] md:max-w-none md:max-h-[500px] object-contain"
     alt="Hero Image"
   />
 </div>>
