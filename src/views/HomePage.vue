@@ -168,7 +168,7 @@ const currentSlide = computed<SlideType>(() => {
 
 <template>
   <main class="overflow-x-hidden">
- <div class="relative w-full h-[80vh] md:h-screen overflow-hidden">
+ <div class="relative w-full h-[70svh] md:h-screen overflow-hidden">
   <!-- SLIDES -->
   <div class="absolute inset-0">
     <transition name="fade-slide">
